@@ -3,29 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class TopDownMotor : MonoBehaviour, IMove
+public class PlayerMovement : MonoBehaviour, IMove
 {
     [Tooltip("Character Object")]
-    [SerializeField] GameObject cha;
-
+    [SerializeField] GameObject character;
     public Transform shadow;
+    
     Rigidbody2D rb;
+    Rigidbody2D crb;
 
     [SerializeField] Animator[] animators;
 
-    IAttack<Health>[] attackScrpits;
+    IAttack<Health>[] attackScripts;
 
     public float moveSpeed = 10f;
 
     void Start() {
-        attackScrpits = GetComponents<IAttack<Health>>();
+        attackScripts = GetComponents<IAttack<Health>>();
         rb = GetComponent<Rigidbody2D>();
+        crb = character.GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
         // shadow shrinks when jumping
-        float dist = Mathf.Abs(cha.transform.position.y - this.transform.position.y);
+        float dist = Mathf.Abs(character.transform.position.y - this.transform.position.y);
         float scale = dist / 0.4f;
         shadow.localScale = new Vector3(Mathf.Pow(1 / scale, 0.25f), Mathf.Pow(1 / scale, 0.25f), shadow.localScale.z);
     }
@@ -34,6 +36,7 @@ public class TopDownMotor : MonoBehaviour, IMove
         // character movement
         if (direction.sqrMagnitude < .01f){
             rb.velocity = Vector2.zero;
+            crb.velocity = new Vector2(0, crb.velocity.y);
             UpdateAnimations(direction.x, direction.y);
         }
         else
@@ -41,10 +44,10 @@ public class TopDownMotor : MonoBehaviour, IMove
             Vector2 dirnorm = direction.normalized * moveSpeed;
             dirnorm.y = dirnorm.y / 2;
             rb.velocity = dirnorm;
-            // main character position correction
-            cha.transform.position = new Vector3(this.transform.position.x, cha.transform.position.y, cha.transform.position.z);
+            crb.velocity = new Vector2(dirnorm.x, crb.velocity.y);
             UpdateAnimations(direction.normalized.x, direction.normalized.y);
         }
+        character.transform.position = new Vector3(this.transform.position.x, character.transform.position.y, this.transform.position.z);
     }
 
     public void UpdateAnimations(float horizontal, float vertical) {
@@ -55,9 +58,9 @@ public class TopDownMotor : MonoBehaviour, IMove
             }
         }
 
-        if (attackScrpits.Length > 0)
+        if (attackScripts.Length > 0)
         {
-            foreach (IAttack<Health> attack in attackScrpits)
+            foreach (IAttack<Health> attack in attackScripts)
             {
                 attack.SetDirection(new Vector2(horizontal, vertical).normalized);
             }
