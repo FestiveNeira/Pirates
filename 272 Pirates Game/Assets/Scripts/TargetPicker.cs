@@ -5,7 +5,18 @@ using UnityEngine;
 public class TargetPicker : MonoBehaviour
 {
     public GameObject[] targets = new GameObject[4];
+    public GameObject DefaultTarget;
     public GameObject target;
+
+    void Start()
+    {
+        if (GameObject.FindGameObjectsWithTag("Player") != null)
+        {
+            targets = GameObject.FindGameObjectsWithTag("Player");
+            DefaultTarget = targets[0];
+            target = DefaultTarget;
+        }
+    }
 
     void Update()
     {
@@ -18,6 +29,7 @@ public class TargetPicker : MonoBehaviour
                 if(temp == -1 || dist < temp)
                 {
                     target = t;
+                    temp = dist;
                 }
             }
         }

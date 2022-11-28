@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 8002420258813090685}
   - component: {fileID: 1181266269719676490}
   - component: {fileID: 4398577075954188706}
+  - component: {fileID: 1314580026277573770}
   m_Layer: 3
   m_Name: Manager
   m_TagString: Untagged
@@ -282,6 +283,24 @@ MonoBehaviour:
   shadow: {fileID: 3165583917106538375}
   animators: []
   moveSpeed: 8
+--- !u!114 &1314580026277573770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931768518235151064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c2cc230d8ba5e4aab62a810b93f129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &5011466704698544026
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +349,7 @@ MonoBehaviour:
   attackSpeed: 0.5
   attackInput: 323
   attackOffset: {fileID: 0}
-  projectile: {fileID: 0}
+  projectile: {fileID: 7728412902767994620, guid: 0db777469c91a34428baf975c0a088a8, type: 3}
   projectileSpeed: 5
   liveTime: 10
   infiniteAmmo: 1

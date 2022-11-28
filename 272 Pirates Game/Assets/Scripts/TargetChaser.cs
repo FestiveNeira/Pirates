@@ -24,10 +24,12 @@ public class TargetChaser : MonoBehaviour
 
     void Start(){
         motor = GetComponent<IMove>();
-        if (GameObject.FindObjectOfType<PlayerInputController>())
-        {
-            target = GameObject.FindObjectOfType<PlayerInputController>().gameObject;
-        }
+        target = this.GetComponent<TargetPicker>().target;
+    }
+
+    void Update()
+    {
+        target = this.GetComponent<TargetPicker>().target;
     }
 
     void FixedUpdate(){
