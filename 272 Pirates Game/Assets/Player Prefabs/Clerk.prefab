@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 6020741536847854438}
   - component: {fileID: 1982328887582974902}
   m_Layer: 0
-  m_Name: Clerk (1)
+  m_Name: Clerk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
