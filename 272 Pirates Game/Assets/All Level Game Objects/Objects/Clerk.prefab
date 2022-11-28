@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 8002420258813090685}
   - component: {fileID: 8962369266094998636}
   - component: {fileID: 4398577075954188706}
+  - component: {fileID: 7243586284340539528}
   m_Layer: 3
   m_Name: Clerk
   m_TagString: Untagged
@@ -264,8 +265,6 @@ MonoBehaviour:
   stoppingDistance: 0.1
   minimumDistance: 0.05
   dist: 0
-  clarify: 0
-  clarifyactual: 0
 --- !u!114 &4398577075954188706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +281,24 @@ MonoBehaviour:
   shadow: {fileID: 3165583917106538375}
   animators: []
   moveSpeed: 6
+--- !u!114 &7243586284340539528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931768518235151064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c2cc230d8ba5e4aab62a810b93f129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &5231429294454397918
 GameObject:
   m_ObjectHideFlags: 0
