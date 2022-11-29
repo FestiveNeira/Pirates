@@ -8,6 +8,8 @@ public class TargetPicker : MonoBehaviour
     public GameObject DefaultTarget;
     public GameObject target;
 
+    public bool randtarget = false;
+
     void Start()
     {
         if (GameObject.FindGameObjectsWithTag("Player") != null)
@@ -20,16 +22,26 @@ public class TargetPicker : MonoBehaviour
 
     void Update()
     {
-        double temp = -1;
-        foreach (GameObject t in targets)
+        if (randtarget)
         {
-            if (t.activeSelf)
+            int ind = Random.Range(0,4);
+            while(!targets[ind].activeSelf) {
+                ind = Random.Range(0,4);
+            }
+        }
+        else
+        {
+            double temp = -1;
+            foreach (GameObject t in targets)
             {
-                double dist = (transform.position - t.transform.position).sqrMagnitude;
-                if(temp == -1 || dist < temp)
+                if (t.activeSelf)
                 {
-                    target = t;
-                    temp = dist;
+                    double dist = (transform.position - t.transform.position).sqrMagnitude;
+                    if(temp == -1 || dist < temp)
+                    {
+                        target = t;
+                        temp = dist;
+                    }
                 }
             }
         }
