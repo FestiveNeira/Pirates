@@ -40,7 +40,7 @@ public class ShootAllDirection : Attack
         else
         {
             // some targetting thing
-            direction = (playerRef.transform.position - attackOffset.transform.position);
+            direction = (this.GetComponent<TargetPicker>().target.transform.position - attackOffset.transform.position);
             direction.Normalize();
         }
         float rotation = Vector2.Angle(Vector2.right, direction);
