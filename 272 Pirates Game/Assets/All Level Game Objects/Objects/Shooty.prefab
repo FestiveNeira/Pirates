@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1917675000689594033}
+  - component: {fileID: 5248087569541185660}
+  - component: {fileID: 6124422292330234455}
+  - component: {fileID: 1447565227766902238}
   m_Layer: 0
   m_Name: Shooty
   m_TagString: Untagged
@@ -31,3 +34,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5248087569541185660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708712801399163829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37402b8a26ff634b952eca607f34fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attacksEnabled: 1
+--- !u!114 &6124422292330234455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708712801399163829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349ca92a71f1b36488171a9eb93b4c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  attackSpeed: 0.5
+  attackInput: 323
+  attackOffset: {fileID: 0}
+  projectile: {fileID: 0}
+  projectileSpeed: 5
+  liveTime: 10
+  infiniteAmmo: 1
+--- !u!114 &1447565227766902238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708712801399163829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c2cc230d8ba5e4aab62a810b93f129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  DefaultTarget: {fileID: 0}
+  target: {fileID: 0}
+  randtarget: 0
