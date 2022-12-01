@@ -29,6 +29,7 @@ public class EnemyAttackManager : MonoBehaviour
             this.enabled = false;
         }
 
+        /*
         PlayerHealth[] checkForOnePlayer = FindObjectsOfType<PlayerHealth>();
         if(checkForOnePlayer.Length > 1)
         {
@@ -44,7 +45,13 @@ public class EnemyAttackManager : MonoBehaviour
         {
             player = checkForOnePlayer[0];
         }
+        */
+
+        //***************************************************************************************
+        player = this.GetComponent<TargetPicker>().target.GetComponent<PlayerHealth>();
+
         enemyAttack.setPlayerRef(player);
+        //***************************************************************************************
 
         if (enemyAttack is PokeFourDirection e)
         {
@@ -63,6 +70,12 @@ public class EnemyAttackManager : MonoBehaviour
 
     void Update()
     {
+        //***************************************************************************************
+        player = this.GetComponent<TargetPicker>().target.GetComponent<PlayerHealth>();
+
+        enemyAttack.setPlayerRef(player);
+        //***************************************************************************************
+
         if (needsCasting)
         {
             if(checkDistance(attackRange, needsAllDirection) && !enemyAttack.attacking) StartCoroutine(enemyAttack.ExecuteAttack(enemyAttack.attackSpeed));

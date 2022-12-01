@@ -187,6 +187,9 @@ GameObject:
   - component: {fileID: 1181266269719676490}
   - component: {fileID: 4398577075954188706}
   - component: {fileID: 1314580026277573770}
+  - component: {fileID: 5209179461703143247}
+  - component: {fileID: 5728929403503706160}
+  - component: {fileID: 7886959519154081279}
   m_Layer: 3
   m_Name: Manager
   m_TagString: Untagged
@@ -301,6 +304,64 @@ MonoBehaviour:
   - {fileID: 0}
   DefaultTarget: {fileID: 0}
   target: {fileID: 0}
+  randtarget: 0
+--- !u!114 &5209179461703143247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931768518235151064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37402b8a26ff634b952eca607f34fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attacksEnabled: 1
+--- !u!114 &5728929403503706160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931768518235151064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78525892c19dfe498af180def6e8e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  attackSpeed: 0.5
+  attackInput: 323
+  attackOffset: {fileID: 0}
+  attackRange: 1
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  weaponAnchor: {fileID: 0}
+--- !u!114 &7886959519154081279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931768518235151064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfda27d7be5e734ba50aefe51a92d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 25
+  currentHealth: 0
+  immunityTime: 0.2
+  immunityVisible: 1
+  immortal: 0
+  sound: {fileID: 0}
+  soundVolume: 1
+  dropThings: 0
+  healthBar: 0
+  timeToDie: 0
+  deathCountsTowardGoal: 0
 --- !u!1 &5231429294454397918
 GameObject:
   m_ObjectHideFlags: 0
