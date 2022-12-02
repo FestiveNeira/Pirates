@@ -16,6 +16,8 @@ public class HealthEnemy : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+
+        //play hurt animation prolly red flash 
         if(currentHealth <= 0)
         {
             Destroy(gameObject);
