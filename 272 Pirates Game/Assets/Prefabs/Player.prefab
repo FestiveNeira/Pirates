@@ -345,8 +345,8 @@ GameObject:
   - component: {fileID: 5550190309464389638}
   - component: {fileID: 3999719408438388129}
   - component: {fileID: 7324006835894340229}
-  - component: {fileID: 2264008928552098151}
   - component: {fileID: 768523143150502858}
+  - component: {fileID: 6660719271262373671}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -437,27 +437,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.85, y: 0.425}
   m_Direction: 1
---- !u!114 &2264008928552098151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5682274908750351136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36b8bfbbb455c8545929653ca2e14091, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 50
-  currentHealth: 0
-  immunityTime: 0.2
-  immunityVisible: 1
-  immortal: 0
-  sound: {fileID: 0}
-  soundVolume: 1
-  healthUI: {fileID: 0}
-  startsFullHealth: 1
 --- !u!95 &768523143150502858
 Animator:
   serializedVersion: 4
@@ -478,6 +457,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6660719271262373671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5682274908750351136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8bd478395fd1147b345ee7979cb523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!1 &7351642525537108008
 GameObject:
   m_ObjectHideFlags: 0
