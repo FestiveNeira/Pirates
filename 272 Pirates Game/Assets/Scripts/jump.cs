@@ -25,8 +25,6 @@ public class jump : MonoBehaviour
     public bool jumped = false;
     public float jumppos;
 
-    public Animator anim;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -58,7 +56,6 @@ public class jump : MonoBehaviour
             jumped = true;
             onGround = false;
             jumppos = shadow.transform.position.y;
-            anim.SetTrigger("Jump");
         }
     }
 
