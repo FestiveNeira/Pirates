@@ -7,8 +7,6 @@ public class jump : MonoBehaviour
     Rigidbody2D rb;
     CapsuleCollider2D collider;
 
-    [SerializeField] Animator animator;
-
     [Header("Jump Settings")]
     [Tooltip("How high can I jump")]
     public float jumpHeight = 4f;
@@ -82,7 +80,6 @@ public class jump : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpVel);
             jumped = false;
         }
-        UpdateAnimations(!onGround);
     }
 
     void UpdateGravityScale()
@@ -96,9 +93,5 @@ public class jump : MonoBehaviour
         {
             rb.gravityScale = upGravityScale;
         }
-    }
-
-    public void UpdateAnimations(bool jump) {
-        animator.SetBool("Jump", jump);
     }
 }

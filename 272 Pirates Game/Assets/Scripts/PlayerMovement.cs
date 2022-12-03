@@ -7,13 +7,12 @@ public class PlayerMovement : MonoBehaviour, IMove
 {
     [Tooltip("Character Object")]
     [SerializeField] GameObject character;
-    [SerializeField] GameObject anichar;
     public Transform shadow;
     
     Rigidbody2D rb;
     Rigidbody2D crb;
 
-    [SerializeField] Animator animator;
+    [SerializeField] Animator[] animators;
 
     IAttack<Health>[] attackScripts;
 
@@ -35,7 +34,6 @@ public class PlayerMovement : MonoBehaviour, IMove
 
     public void Move(Vector2 direction) {
         // character movement
-        Flip();
         if (direction.sqrMagnitude < .01f){
             rb.velocity = Vector2.zero;
             crb.velocity = new Vector2(0, crb.velocity.y);
@@ -47,13 +45,18 @@ public class PlayerMovement : MonoBehaviour, IMove
             dirnorm.y = dirnorm.y / 2;
             rb.velocity = dirnorm;
             crb.velocity = new Vector2(dirnorm.x, crb.velocity.y);
-            UpdateAnimations(Mathf.Abs(direction.normalized.x), Mathf.Abs(direction.normalized.y));
+            UpdateAnimations(direction.normalized.x, direction.normalized.y);
         }
         character.transform.position = new Vector3(this.transform.position.x, character.transform.position.y, this.transform.position.z);
     }
 
     public void UpdateAnimations(float horizontal, float vertical) {
-        animator.SetFloat("Speed", horizontal + vertical);
+        if (animators.Length > 0) {
+            foreach (Animator a in animators) {
+                a.SetFloat("HorizontalSpeed", horizontal);
+                a.SetFloat("VerticalSpeed", vertical);
+            }
+        }
 
         if (attackScripts.Length > 0)
         {
@@ -76,15 +79,6 @@ public class PlayerMovement : MonoBehaviour, IMove
             {
                 a.SetBool("IsRunning", false);
             }
-        }
-    }
-
-    public void Flip() {
-        if (rb.velocity.x < 0) {
-            anichar.transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        else if (rb.velocity.x > 0) {
-            anichar.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }
