@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 4314985383208536893}
   - component: {fileID: 7621263395526976537}
   - component: {fileID: 5768991444675078587}
+  - component: {fileID: 4282069658219032753}
   m_Layer: 3
   m_Name: Big Boy Player
   m_TagString: Player
@@ -291,6 +292,24 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+--- !u!114 &4282069658219032753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808521861346321852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d0e7a9ad8bcb040aa823607c9bb1e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 2515669087063691439}
+  attackPoint: {fileID: 0}
+  attackRange: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &5221210098967489260
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +489,14 @@ PrefabInstance:
     - target: {fileID: 57385486147508377, guid: 1dcadac4376ab83459255db57643ad32, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: -1.2211254
+      objectReference: {fileID: 0}
+    - target: {fileID: 57385486147508377, guid: 1dcadac4376ab83459255db57643ad32, type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 1.216775
+      objectReference: {fileID: 0}
+    - target: {fileID: 57385486147508377, guid: 1dcadac4376ab83459255db57643ad32, type: 3}
+      propertyPath: m_Bounds.m_Extent.y
+      value: 1.0794721
       objectReference: {fileID: 0}
     - target: {fileID: 161043702804508049, guid: 1dcadac4376ab83459255db57643ad32, type: 3}
       propertyPath: m_LocalRotation.w

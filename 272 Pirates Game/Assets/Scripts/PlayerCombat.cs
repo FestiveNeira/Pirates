@@ -13,6 +13,7 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.ResetTrigger("Attack");
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
