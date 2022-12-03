@@ -62,21 +62,6 @@ public class PlayerMovement : MonoBehaviour, IMove
                 attack.SetDirection(new Vector2(horizontal, vertical).normalized);
             }
         }
-
-        if (horizontal != 0 || vertical != 0)
-        {
-            foreach (Animator a in animators)
-            {
-                a.SetBool("IsRunning", true);
-            }
-        }
-        else
-        {
-            foreach (Animator a in animators)
-            {
-                a.SetBool("IsRunning", false);
-            }
-        }
     }
 
     public void Flip() {

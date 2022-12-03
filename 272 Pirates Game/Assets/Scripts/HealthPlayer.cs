@@ -7,11 +7,7 @@ public class HealthPlayer : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public Animator anim;
-
     public HealthBar healthBar;
-
-    [SerializeField] SpriteRenderer[] sprites;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +19,6 @@ public class HealthPlayer : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
-        StartCoroutine(FlashRed());
 
         healthBar.SetHealth(currentHealth);
 
@@ -39,16 +33,6 @@ public class HealthPlayer : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             TakeDamage(20);
-        }
-    }
-
-    public IEnumerator FlashRed()
-    {
-        foreach(SpriteRenderer s in sprites)
-        {
-            s.color = Color.red;
-            yield return new WaitForSeconds(0.1f);
-            s.color = Color.white;
         }
     }
 }
