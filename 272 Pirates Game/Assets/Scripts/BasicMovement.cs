@@ -42,6 +42,7 @@ public class BasicMovement : MonoBehaviour, IMove
 
     public void Move(Vector2 position) {
         destination = position;
+        Flip();
     }
 
     public void UpdateAnimations(float horizontal, float vertical) {
