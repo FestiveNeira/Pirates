@@ -32,7 +32,7 @@ public class HealthPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            TakeDamage(20);
+            TakeDamage(10);
         }
     }
 }
