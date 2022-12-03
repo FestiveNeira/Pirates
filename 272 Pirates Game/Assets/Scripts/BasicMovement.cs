@@ -6,11 +6,12 @@ public class BasicMovement : MonoBehaviour, IMove
 {
     [Tooltip("Character Object")]
     [SerializeField] GameObject character;
+    [SerializeField] GameObject anichar;
     public Transform shadow;
 
     Rigidbody2D rb;
     Vector2 destination;
-    [SerializeField] Animator[] animators;
+    [SerializeField] Animator animator;
 
     IAttack<Health>[] attackScripts;
 
@@ -27,7 +28,7 @@ public class BasicMovement : MonoBehaviour, IMove
         direction.y = direction.y / 2;
         if (direction.sqrMagnitude > .01f) {
             rb.velocity = direction.normalized * moveSpeed;
-            UpdateAnimations(direction.normalized.x, direction.normalized.y);
+            UpdateAnimations(Mathf.Abs(direction.normalized.x), Mathf.Abs(direction.normalized.y));
         }
         else {
             rb.velocity = Vector2.zero;
@@ -44,12 +45,7 @@ public class BasicMovement : MonoBehaviour, IMove
     }
 
     public void UpdateAnimations(float horizontal, float vertical) {
-        if (animators.Length > 0) {
-            foreach (Animator a in animators) {
-                a.SetFloat("HorizontalSpeed", horizontal);
-                a.SetFloat("VerticalSpeed", vertical);
-            }
-        }
+        animator.SetFloat("Speed", horizontal + vertical);
 
         if (attackScripts.Length > 0)
         {
@@ -57,6 +53,15 @@ public class BasicMovement : MonoBehaviour, IMove
             {
                 attack.SetDirection(new Vector2(horizontal, vertical).normalized);
             }
+        }
+    }
+
+    public void Flip() {
+        if (rb.velocity.x < 0) {
+            anichar.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (rb.velocity.x > 0) {
+            anichar.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
 }
