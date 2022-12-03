@@ -12,9 +12,9 @@ public class TargetPicker : MonoBehaviour
 
     void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("Player") != null)
+        if (GameObject.FindGameObjectsWithTag("PlayTracker") != null)
         {
-            targets = GameObject.FindGameObjectsWithTag("Player");
+            targets = GameObject.FindGameObjectsWithTag("PlayTracker");
             DefaultTarget = targets[0];
             target = DefaultTarget;
         }

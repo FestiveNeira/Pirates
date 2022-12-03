@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - SpecialProjectile
   - Enemy
+  - PlayTracker
   layers:
   - Default
   - TransparentFX
