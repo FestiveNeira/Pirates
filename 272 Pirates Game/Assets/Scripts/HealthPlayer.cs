@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class HealthPlayer : MonoBehaviour
 {
+    public GameObject parent;
+
     public int maxHealth = 100;
     public int currentHealth;
+
+    public float IFrames = 1f;
+    float immunitytimer = 0;
 
     public HealthBar healthBar;
 
@@ -16,6 +21,12 @@ public class HealthPlayer : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    void FixedUpdate() {
+        if (immunitytimer > 0) {
+            immunitytimer -= Time.deltaTime;
+        }
+    }
+
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -24,14 +35,15 @@ public class HealthPlayer : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Destroy(parent);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && immunitytimer <= 0)
         {
+            immunitytimer = IFrames;
             TakeDamage(10);
         }
     }
