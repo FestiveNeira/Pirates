@@ -25,8 +25,10 @@ public class TargetPicker : MonoBehaviour
         if (randtarget)
         {
             int ind = Random.Range(0,4);
-            while(targets[ind] == null) {
-                ind = Random.Range(0,4);
+            if (targets[0] != null || targets[1] != null || targets[2] != null || targets[3] != null) {
+                while (targets[ind] == null) {
+                    ind = Random.Range(0,4);
+                }
             }
             target = targets[ind];
         }
