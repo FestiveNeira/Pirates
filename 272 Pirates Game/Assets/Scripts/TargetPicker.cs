@@ -25,7 +25,7 @@ public class TargetPicker : MonoBehaviour
         if (randtarget)
         {
             int ind = Random.Range(0,4);
-            while(!targets[ind].activeSelf) {
+            while(targets[ind] == null) {
                 ind = Random.Range(0,4);
             }
             target = targets[ind];
@@ -35,7 +35,7 @@ public class TargetPicker : MonoBehaviour
             double temp = -1;
             foreach (GameObject t in targets)
             {
-                if (t.activeSelf)
+                if (t != null && t.activeSelf)
                 {
                     double dist = (transform.position - t.transform.position).sqrMagnitude;
                     if(temp == -1 || dist < temp)

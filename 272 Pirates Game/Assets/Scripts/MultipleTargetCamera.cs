@@ -32,6 +32,7 @@ public class MultipleTargetCamera : MonoBehaviour
         Move();
         Zoom();
     }
+
     void Zoom()
     {
         float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
@@ -49,10 +50,20 @@ public class MultipleTargetCamera : MonoBehaviour
 
     float GetGreatestDistance()
     {
-        var bounds = new Bounds(targets[0].position, Vector3.zero);
+        Vector3 pos = new Vector3();
+        foreach (Transform x in targets) {
+            if (x != null) {
+                pos = x.position;
+                break;
+            }
+        }
+
+        var bounds = new Bounds(pos, Vector3.zero);
         for (int i = 0; i < targets.Count; i++)
         {
-            bounds.Encapsulate(targets[i].position);
+            if (targets[i] != null) {
+                bounds.Encapsulate(targets[i].position);
+            }
         }
 
         return bounds.size.x;
@@ -60,15 +71,19 @@ public class MultipleTargetCamera : MonoBehaviour
 
     Vector3 GetCenterPoint()
     {
-        if(targets.Count == 1)
-        {
-            return targets[0].position;
+        Vector3 pos = new Vector3();
+        foreach (Transform x in targets) {
+            if (x != null) {
+                pos = x.position;
+            }
         }
 
-        var bounds = new Bounds(targets[0].position, Vector3.zero);
+        var bounds = new Bounds(pos, Vector3.zero);
         for(int i = 0;  i < targets.Count; i++)
         {
-            bounds.Encapsulate(targets[i].position);
+            if (targets[i] != null) {
+                bounds.Encapsulate(targets[i].position);
+            }
         }
 
         return bounds.center;

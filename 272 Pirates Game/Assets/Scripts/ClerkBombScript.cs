@@ -22,11 +22,12 @@ public class ClerkBombScript : MonoBehaviour
         if (this.transform.position.x <= destx) {
             // Explode and make a clerk at low hp
             foreach (GameObject t in targets) {
-                if (t.activeSelf) {
+                if (t.activeSelf && t != null) {
                     Vector2 v = this.transform.position - t.transform.position;
                     double dist = Mathf.Sqrt(Mathf.Pow(v.x, 2) + Mathf.Pow(v.y, 2));
                     if (dist < 1) {
                         // Damage t for (maxdmg - (maxdmg * dist))
+                        t.getComponent<HealthPlayer>().TakeDamage(5);
                     }
                 }
             }

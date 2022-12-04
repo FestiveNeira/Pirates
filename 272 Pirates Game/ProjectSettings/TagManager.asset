@@ -10,6 +10,8 @@ TagManager:
   - SpecialProjectile
   - Enemy
   - PlayTracker
+  - Cannons
+  - ManagerBossStuff
   layers:
   - Default
   - TransparentFX

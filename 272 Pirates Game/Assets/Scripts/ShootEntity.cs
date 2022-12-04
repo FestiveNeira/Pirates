@@ -7,10 +7,8 @@ public class ShootEntity : MonoBehaviour
     public GameObject projectile;
     public float projectileSpeed;
 
-    public float startattacktimer;
     public float randomattackdelay;
     public float maxDelay = 1f;
-    public float attackDelay = 10f;
     bool dodelayticks = false;
 
     Vector3 direction;
@@ -19,18 +17,12 @@ public class ShootEntity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startattacktimer = attackDelay;
         randomattackdelay = Random.Range(0f, maxDelay);
     }
 
     // Update is called once per frame
     void Update()
     {
-        startattacktimer -= Time.deltaTime;
-        if (startattacktimer <= 0) {
-            startattacktimer = attackDelay;
-            dodelayticks = true;
-        }
         if (dodelayticks) {
             randomattackdelay -= Time.deltaTime;
         }
@@ -48,5 +40,9 @@ public class ShootEntity : MonoBehaviour
             randomattackdelay = Random.Range(0f, maxDelay);
             dodelayticks = false;
         }
+    }
+
+    public void Fire() {
+        dodelayticks = true;
     }
 }
