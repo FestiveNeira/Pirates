@@ -27,7 +27,7 @@ public class ClerkBombScript : MonoBehaviour
                     double dist = Mathf.Sqrt(Mathf.Pow(v.x, 2) + Mathf.Pow(v.y, 2));
                     if (dist < 1) {
                         // Damage t for (maxdmg - (maxdmg * dist))
-                        t.getComponent<HealthPlayer>().TakeDamage(5);
+                        t.transform.GetChild(0).gameObject.GetComponent<HealthPlayer>().TakeDamage(5);
                     }
                 }
             }
