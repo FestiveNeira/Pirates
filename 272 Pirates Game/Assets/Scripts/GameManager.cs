@@ -26,21 +26,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyCount == (totalEnemies - (spawn1.enemyCount)))
+        if(enemyCount == (totalEnemies - (spawn1.GetComponent<SpawnPoint>().enemyTotal)))
         {
             wall1.SetActive(false);
             spawn1.SetActive(true);
             spawn2.SetActive(true);
         }
 
-        if(enemyCount == (totalEnemies - (spawn1.enemyCount + spawn2.enemyCount)))
+        if(enemyCount == (totalEnemies - (spawn1.GetComponent<SpawnPoint>().enemyTotal + spawn2.GetComponent<SpawnPoint>().enemyTotal)))
         {
             wall2.SetActive(false);
             spawn3.SetActive(true);
             spawn4.SetActive(true);
         }
 
-        if(enemyCount <= (totalEnemies - (spawn1.enemyCount + spawn2.enemyCount + spawn3.enemyCount)))
+        if(enemyCount <= (totalEnemies - (spawn1.GetComponent<SpawnPoint>().enemyTotal + spawn2.GetComponent<SpawnPoint>().enemyTotal + spawn3.GetComponent<SpawnPoint>().enemyTotal)))
         {
             wall3.SetActive(false);
         }

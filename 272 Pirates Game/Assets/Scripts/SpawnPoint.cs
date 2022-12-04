@@ -7,7 +7,7 @@ public class SpawnPoint : MonoBehaviour
     public GameObject[] enemyList;
     public int[] enemyCount;
 
-    private int enemyTotal = 0;
+    public int enemyTotal = 0;
 
     private void OnEnable()
     {

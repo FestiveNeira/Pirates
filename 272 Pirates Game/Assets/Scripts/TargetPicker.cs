@@ -28,6 +28,7 @@ public class TargetPicker : MonoBehaviour
             while(!targets[ind].activeSelf) {
                 ind = Random.Range(0,4);
             }
+            target = targets[ind];
         }
         else
         {

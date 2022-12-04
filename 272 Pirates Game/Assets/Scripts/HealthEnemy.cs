@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HealthEnemy : MonoBehaviour
 {
+    public GameObject parent;
+
     public int maxHealth = 5;
     public int currentHealth;
 
@@ -22,7 +24,7 @@ public class HealthEnemy : MonoBehaviour
         if(currentHealth <= 0)
         {
             GameManager.enemyCount -= 1;
-            Destroy(gameObject);
+            Destroy(parent);
         }
     }
 }
