@@ -22,7 +22,7 @@ public class HealthEnemy : MonoBehaviour
 
         //play hurt animation prolly red flash 
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             GameManager.enemyCount -= 1;
             Destroy(parent);

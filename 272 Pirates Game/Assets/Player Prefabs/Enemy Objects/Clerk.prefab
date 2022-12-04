@@ -194,6 +194,9 @@ MonoBehaviour:
   anim: {fileID: 7561373840814449998}
   maxHealth: 5
   currentHealth: 0
+  rb: {fileID: 7795796248628716151}
+  knockbackForce: 10
+  knockbackForceUp: 2
 --- !u!1 &3005905066386551124
 GameObject:
   m_ObjectHideFlags: 0
