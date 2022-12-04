@@ -1076,6 +1076,10 @@ PrefabInstance:
       value: -0.99238133
       objectReference: {fileID: 0}
     - target: {fileID: 7003607164083364187, guid: 6d4125b82b54049478990beee7a24848, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 41387417}
+    - target: {fileID: 7003607164083364187, guid: 6d4125b82b54049478990beee7a24848, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 737296558}
@@ -1238,6 +1242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parrot Boy Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5721703750237665945, guid: 560f021ce19611a4e885f5a597875008, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 41387417}
     - target: {fileID: 5721703750237665945, guid: 560f021ce19611a4e885f5a597875008, type: 3}
       propertyPath: healthBar
       value: 
@@ -1664,7 +1672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 870167107722089733, guid: 3f870144d4df13e4ab2d664966f14cf4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 870167107722089733, guid: 3f870144d4df13e4ab2d664966f14cf4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6093,6 +6101,10 @@ PrefabInstance:
       value: 0.013759356
       objectReference: {fileID: 0}
     - target: {fileID: 2695425790728827629, guid: d1555d62e6488ef4f92a1c05cca9b434, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 41387417}
+    - target: {fileID: 2695425790728827629, guid: d1555d62e6488ef4f92a1c05cca9b434, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 851351395}
@@ -7600,6 +7612,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.4911776
       objectReference: {fileID: 0}
+    - target: {fileID: 2082075517893058604, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 41387417}
     - target: {fileID: 2082075517893058604, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
       propertyPath: healthBar
       value: 
@@ -25379,7 +25395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 870167107722089733, guid: 3f870144d4df13e4ab2d664966f14cf4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7000003
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 870167107722089733, guid: 3f870144d4df13e4ab2d664966f14cf4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25569,7 +25585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 870167107722089733, guid: 3f870144d4df13e4ab2d664966f14cf4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.71000004
+      value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: 870167107722089733, guid: 3f870144d4df13e4ab2d664966f14cf4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36711,7 +36727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 870167107722089733, guid: 3f870144d4df13e4ab2d664966f14cf4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5300002
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 870167107722089733, guid: 3f870144d4df13e4ab2d664966f14cf4, type: 3}
       propertyPath: m_LocalPosition.z
