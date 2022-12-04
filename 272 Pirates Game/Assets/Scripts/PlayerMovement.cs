@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour, IMove
 
     public void Move(Vector2 direction) {
         // character movement
-        Flip();
+        Flip(direction.x);
         if (direction.sqrMagnitude < .01f){
             rb.velocity = Vector2.zero;
             crb.velocity = new Vector2(0, crb.velocity.y);
@@ -64,11 +64,11 @@ public class PlayerMovement : MonoBehaviour, IMove
         }
     }
 
-    public void Flip() {
-        if (rb.velocity.x < 0) {
+    public void Flip(float x) {
+        if (x < 0) {
             anichar.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-        else if (rb.velocity.x > 0) {
+        else if (x > 0) {
             anichar.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }

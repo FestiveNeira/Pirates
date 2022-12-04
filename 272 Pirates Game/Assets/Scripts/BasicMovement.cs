@@ -25,6 +25,7 @@ public class BasicMovement : MonoBehaviour, IMove
     void FixedUpdate()
     {
         Vector2 direction = new Vector2(destination.x - transform.position.x, destination.y - transform.position.y);
+        Flip(direction.x);
         direction.y = direction.y / 2;
         if (direction.sqrMagnitude > .01f) {
             rb.velocity = direction.normalized * moveSpeed;
@@ -42,7 +43,6 @@ public class BasicMovement : MonoBehaviour, IMove
 
     public void Move(Vector2 position) {
         destination = position;
-        Flip();
     }
 
     public void UpdateAnimations(float horizontal, float vertical) {
@@ -57,11 +57,11 @@ public class BasicMovement : MonoBehaviour, IMove
         }
     }
 
-    public void Flip() {
-        if (rb.velocity.x < 0) {
+    public void Flip(float x) {
+        if (x < 0) {
             anichar.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (rb.velocity.x > 0) {
+        else if (x > 0) {
             anichar.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }

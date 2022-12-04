@@ -6,12 +6,14 @@ public class ClerkBombScript : MonoBehaviour
 {
     Rigidbody2D rb;
     public GameObject clerk;
+    public Animator animator;
     public float destx;
     public Vector3 dir;
     public GameObject[] targets;
     // Start is called before the first frame update
     void Start()
     {
+        animator.SetBool("isProjectile", true);
         rb = this.GetComponent<Rigidbody2D>();
         rb.velocity = dir;
     }
