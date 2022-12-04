@@ -24,7 +24,7 @@ public class ManagerMovement : MonoBehaviour, IMove
 
     void FixedUpdate()
     {
-        if (character.GetComponent<Cannons>().pointanim) {
+        if (this.GetComponent<Cannons>().pointanim) {
             Vector2 direction = new Vector2(destination.x - transform.position.x, destination.y - transform.position.y);
             direction.y = direction.y / 2;
             if (direction.sqrMagnitude > .01f) {

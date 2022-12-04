@@ -10,6 +10,7 @@ public class ClerkBombScript : MonoBehaviour
     public float destx;
     public Vector3 dir;
     public GameObject[] targets;
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -16,8 +16,6 @@ public class Cannons : MonoBehaviour
     void Start()
     {
         startattacktimer = attackDelay;
-        GameObject manStuff = GameObject.FindGameObjectWithTag("ManagerBossStuff");
-        manStuff.SetActive(true);
         manCannons = GameObject.FindGameObjectsWithTag("Cannons");
     }
 

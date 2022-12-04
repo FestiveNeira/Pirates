@@ -17,6 +17,9 @@ public class MultipleTargetCamera : MonoBehaviour
     public float maxZoom = 10f;
     public float zoomLimiter = 50f;
 
+    public float minY = -3.2f;
+    public float maxY = 12.7f;
+
     private Camera cam;
 
     private void Start()
