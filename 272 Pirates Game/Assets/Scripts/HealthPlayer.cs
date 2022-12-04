@@ -14,8 +14,6 @@ public class HealthPlayer : MonoBehaviour
 
     public HealthBar healthBar;
 
-    public GameObject cam;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +35,6 @@ public class HealthPlayer : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            cam.GetComponent<MultipleTargetCamera>().targets.Remove(gameObject.transform);
             Destroy(parent);
         }
     }
