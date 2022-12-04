@@ -17,6 +17,7 @@ public class HealthPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.playerCount += 1;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -46,5 +47,10 @@ public class HealthPlayer : MonoBehaviour
             immunitytimer = IFrames;
             TakeDamage(10);
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.playerCount -= 1;
     }
 }

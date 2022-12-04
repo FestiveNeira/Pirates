@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 3542540248355001188}
   - component: {fileID: 3698440338713114423}
   - component: {fileID: 7307268414756489636}
+  - component: {fileID: 6212730487265087345}
   m_Layer: 3
   m_Name: Manager
   m_TagString: Enemy
@@ -342,6 +343,18 @@ MonoBehaviour:
   anim: {fileID: 5079330497641368194}
   maxHealth: 5
   currentHealth: 0
+--- !u!114 &6212730487265087345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450883778320022838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6672bd4045eed448d8382f50c5ddb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7750192749473086512
 GameObject:
   m_ObjectHideFlags: 0

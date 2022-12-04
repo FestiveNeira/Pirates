@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int totalEnemies = 40;
 
     public static int enemyCount;
+    public static int playerCount;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,11 @@ public class GameManager : MonoBehaviour
         {
             wall3.SetActive(false);
             spawn4.SetActive(true);
+        }
+
+        if(playerCount <= 0)
+        {
+            SceneManager.LoadScene("DeathScene");
         }
     }
 }
