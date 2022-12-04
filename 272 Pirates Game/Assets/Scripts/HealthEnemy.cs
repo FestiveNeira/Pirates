@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthEnemy : MonoBehaviour
 {
     public GameObject parent;
+    public Animator anim;
 
     public int maxHealth = 5;
     public int currentHealth;
@@ -25,6 +26,14 @@ public class HealthEnemy : MonoBehaviour
         {
             GameManager.enemyCount -= 1;
             Destroy(parent);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            anim.SetTrigger("Attack");
         }
     }
 }

@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 2556115463521746436}
+  anim: {fileID: 7561373840814449998}
   maxHealth: 5
   currentHealth: 0
 --- !u!1 &3005905066386551124
