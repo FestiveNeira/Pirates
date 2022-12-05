@@ -139,8 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   agroDistance: 100
-  stoppingDistance: 0.1
-  minimumDistance: 0.05
+  stoppingDistance: 1
+  minimumDistance: 0.5
   dist: 0
 --- !u!114 &6486008806117074302
 MonoBehaviour:
@@ -158,6 +158,9 @@ MonoBehaviour:
   anichar: {fileID: 63138591915752113}
   shadow: {fileID: 5541228413502079835}
   animator: {fileID: 7561373840814449998}
+  pause: 0
+  pauselength: 0.2
+  pausetimer: 0.2
   moveSpeed: 6
 --- !u!114 &256264781970183252
 MonoBehaviour:
@@ -192,9 +195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 2556115463521746436}
   anim: {fileID: 7561373840814449998}
+  knockback: 20
   maxHealth: 5
   currentHealth: 0
-  knock: {fileID: 0}
 --- !u!114 &2996691164059818387
 MonoBehaviour:
   m_ObjectHideFlags: 0

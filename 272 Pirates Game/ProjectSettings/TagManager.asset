@@ -13,6 +13,7 @@ TagManager:
   - Cannons
   - ManagerBossStuff
   - BossHealth
+  - PlayerHitbox
   layers:
   - Default
   - TransparentFX

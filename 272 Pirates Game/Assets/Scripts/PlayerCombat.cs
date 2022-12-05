@@ -10,9 +10,6 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
-    public float thrust;
-    public float delay;
-
     // Update is called once per frame
     void Update()
     {
@@ -36,7 +33,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if(enemy.gameObject.CompareTag("Enemy"))
             {
-                enemy.GetComponent<HealthEnemy>().TakeDamage(1);
+                enemy.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 1);
             }
         }
     }

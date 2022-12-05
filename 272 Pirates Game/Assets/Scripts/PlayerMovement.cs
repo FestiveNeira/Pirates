@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour, IMove
 {
     [Tooltip("Character Object")]
@@ -12,8 +11,11 @@ public class PlayerMovement : MonoBehaviour, IMove
     
     Rigidbody2D rb;
     Rigidbody2D crb;
-
     [SerializeField] Animator animator;
+
+    public bool pause = false;
+    public float pauselength = .1f;
+    float pausetimer;
 
     IAttack<Health>[] attackScripts;
 
@@ -23,6 +25,7 @@ public class PlayerMovement : MonoBehaviour, IMove
         attackScripts = GetComponents<IAttack<Health>>();
         rb = GetComponent<Rigidbody2D>();
         crb = character.GetComponent<Rigidbody2D>();
+        pausetimer = pauselength;
     }
 
     void FixedUpdate()
@@ -35,21 +38,30 @@ public class PlayerMovement : MonoBehaviour, IMove
 
     public void Move(Vector2 direction) {
         // character movement
-        Flip(direction.x);
-        if (direction.sqrMagnitude < .01f){
-            rb.velocity = Vector2.zero;
-            crb.velocity = new Vector2(0, crb.velocity.y);
-            UpdateAnimations(direction.x, direction.y);
+        if (!pause) {
+            Flip(direction.x);
+            if (direction.sqrMagnitude < .01f){
+                rb.velocity = Vector2.zero;
+                crb.velocity = new Vector2(0, crb.velocity.y);
+                UpdateAnimations(direction.x, direction.y);
+            }
+            else
+            {
+                Vector2 dirnorm = direction.normalized * moveSpeed;
+                dirnorm.y = dirnorm.y / 2;
+                rb.velocity = dirnorm;
+                crb.velocity = new Vector2(dirnorm.x, crb.velocity.y);
+                UpdateAnimations(Mathf.Abs(direction.normalized.x), Mathf.Abs(direction.normalized.y));
+            }
+            character.transform.position = new Vector3(this.transform.position.x, character.transform.position.y, this.transform.position.z);
         }
-        else
-        {
-            Vector2 dirnorm = direction.normalized * moveSpeed;
-            dirnorm.y = dirnorm.y / 2;
-            rb.velocity = dirnorm;
-            crb.velocity = new Vector2(dirnorm.x, crb.velocity.y);
-            UpdateAnimations(Mathf.Abs(direction.normalized.x), Mathf.Abs(direction.normalized.y));
+        else {
+            pausetimer -= Time.deltaTime;
+            if (pausetimer <= 0) {
+                pause = false;
+                pausetimer = pauselength;
+            }
         }
-        character.transform.position = new Vector3(this.transform.position.x, character.transform.position.y, this.transform.position.z);
     }
 
     public void UpdateAnimations(float horizontal, float vertical) {

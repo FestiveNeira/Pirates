@@ -6,6 +6,8 @@ public class HealthPlayer : MonoBehaviour
 {
     public GameObject parent;
 
+    public int knockback = 20;
+
     public int maxHealth = 100;
     public int currentHealth;
 
@@ -15,8 +17,7 @@ public class HealthPlayer : MonoBehaviour
     public HealthBar healthBar;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         GameManager.playerCount += 1;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -28,29 +29,30 @@ public class HealthPlayer : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(GameObject source, int damage) {
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
 
+        parent.gameObject.GetComponent<PlayerMovement>().pause = true;
+        Vector3 dir = (parent.transform.position - source.transform.position).normalized * knockback;
+        parent.gameObject.GetComponent<Rigidbody2D>().velocity = dir;
+        
         if (currentHealth <= 0)
         {
             Destroy(parent);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+    private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy") && immunitytimer <= 0)
         {
             immunitytimer = IFrames;
-            TakeDamage(10);
+            TakeDamage(collision.gameObject, 10);
         }
     }
 
-    private void OnDestroy()
-    {
+    private void OnDestroy() {
         GameManager.playerCount -= 1;
     }
 }

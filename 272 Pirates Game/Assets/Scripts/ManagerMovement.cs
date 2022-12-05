@@ -13,6 +13,10 @@ public class ManagerMovement : MonoBehaviour, IMove
     Vector2 destination;
     [SerializeField] Animator animator;
 
+    public bool pause = false;
+    public float pauselength = .1f;
+    float pausetimer;
+
     IAttack<Health>[] attackScripts;
 
     public float moveSpeed = 10f;
@@ -20,11 +24,12 @@ public class ManagerMovement : MonoBehaviour, IMove
     void Start() {
         attackScripts = GetComponents<IAttack<Health>>();
         rb = GetComponent<Rigidbody2D>();
+        pausetimer = pauselength;
     }
 
     void FixedUpdate()
     {
-        if (this.GetComponent<Cannons>().pointanim) {
+        if (this.GetComponent<Cannons>().pointanim && !pause) {
             Vector2 direction = new Vector2(destination.x - transform.position.x, destination.y - transform.position.y);
             direction.y = direction.y / 2;
             if (direction.sqrMagnitude > .01f) {
@@ -39,6 +44,13 @@ public class ManagerMovement : MonoBehaviour, IMove
             float dist = Mathf.Abs(character.transform.position.y - this.transform.position.y);
             float scale = dist / 0.4f;
             shadow.localScale = new Vector3(Mathf.Pow(1 / scale, 0.25f), Mathf.Pow(1 / scale, 0.25f), shadow.localScale.z);
+        }
+        else if (pause) {
+            pausetimer -= Time.deltaTime;
+            if (pausetimer <= 0) {
+                pause = false;
+                pausetimer = pauselength;
+            }
         }
         else {
             rb.velocity = Vector2.zero;

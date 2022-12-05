@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class KnockbackFeedback : MonoBehaviour
 {
-    public float thrust;
-    public float delay;
+    public float thrust = 3;
+    public float delay = 1f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

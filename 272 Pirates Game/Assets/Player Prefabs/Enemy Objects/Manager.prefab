@@ -291,6 +291,9 @@ MonoBehaviour:
   anichar: {fileID: 4727275420228414211}
   shadow: {fileID: 646719319353540713}
   animator: {fileID: 5079330497641368194}
+  pause: 0
+  pauselength: 0.2
+  pausetimer: 0.2
   moveSpeed: 10
 --- !u!114 &3542540248355001188
 MonoBehaviour:
@@ -342,6 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7450883778320022838}
   anim: {fileID: 5079330497641368194}
+  knockback: 20
   maxHealth: 5
   currentHealth: 0
 --- !u!114 &6212730487265087345

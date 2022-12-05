@@ -13,6 +13,10 @@ public class BasicMovement : MonoBehaviour, IMove
     Vector2 destination;
     [SerializeField] Animator animator;
 
+    public bool pause = false;
+    public float pauselength = .1f;
+    float pausetimer;
+
     IAttack<Health>[] attackScripts;
 
     public float moveSpeed = 10f;
@@ -20,27 +24,37 @@ public class BasicMovement : MonoBehaviour, IMove
     void Start() {
         attackScripts = GetComponents<IAttack<Health>>();
         rb = GetComponent<Rigidbody2D>();
+        pausetimer = pauselength;
     }
 
     void FixedUpdate()
     {
-        Vector2 direction = new Vector2(destination.x - transform.position.x, destination.y - transform.position.y);
-        Flip(direction.x);
-        direction.y = direction.y / 2;
-        if (direction.sqrMagnitude > .01f)
-        {
-            rb.velocity = direction.normalized * moveSpeed;
-            UpdateAnimations(Mathf.Abs(direction.normalized.x), Mathf.Abs(direction.normalized.y));
+        if (!pause) {
+            Vector2 direction = new Vector2(destination.x - transform.position.x, destination.y - transform.position.y);
+            Flip(direction.x);
+            direction.y = direction.y / 2;
+            if (direction.sqrMagnitude > .01f)
+            {
+                rb.velocity = direction.normalized * moveSpeed;
+                UpdateAnimations(Mathf.Abs(direction.normalized.x), Mathf.Abs(direction.normalized.y));
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+                UpdateAnimations(0, 0);
+            }
+            // regulate shadow size
+            float dist = Mathf.Abs(character.transform.position.y - this.transform.position.y);
+            float scale = dist / 0.4f;
+            shadow.localScale = new Vector3(Mathf.Pow(1 / scale, 0.25f), Mathf.Pow(1 / scale, 0.25f), shadow.localScale.z);
         }
-        else
-        {
-            rb.velocity = Vector2.zero;
-            UpdateAnimations(0, 0);
+        else {
+            pausetimer -= Time.deltaTime;
+            if (pausetimer <= 0) {
+                pause = false;
+                pausetimer = pauselength;
+            }
         }
-        // regulate shadow size
-        float dist = Mathf.Abs(character.transform.position.y - this.transform.position.y);
-        float scale = dist / 0.4f;
-        shadow.localScale = new Vector3(Mathf.Pow(1 / scale, 0.25f), Mathf.Pow(1 / scale, 0.25f), shadow.localScale.z);
     }
 
     public void Move(Vector2 position) {
