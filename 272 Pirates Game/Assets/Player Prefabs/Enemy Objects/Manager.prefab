@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  agroDistance: 15
+  agroDistance: 100
   stoppingDistanceY: 1
   minimumDistanceX: 10
   maximumDistanceX: 15
