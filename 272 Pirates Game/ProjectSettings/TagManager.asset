@@ -14,6 +14,7 @@ TagManager:
   - ManagerBossStuff
   - BossHealth
   - PlayerHitbox
+  - Heal
   layers:
   - Default
   - TransparentFX

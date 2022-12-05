@@ -160,7 +160,6 @@ MonoBehaviour:
   animator: {fileID: 7561373840814449998}
   pause: 0
   pauselength: 0.2
-  pausetimer: 0.2
   moveSpeed: 6
 --- !u!114 &256264781970183252
 MonoBehaviour:
@@ -196,7 +195,7 @@ MonoBehaviour:
   parent: {fileID: 2556115463521746436}
   anim: {fileID: 7561373840814449998}
   knockback: 20
-  maxHealth: 5
+  maxHealth: 2
   currentHealth: 0
 --- !u!114 &2996691164059818387
 MonoBehaviour:

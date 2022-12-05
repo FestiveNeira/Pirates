@@ -9,6 +9,8 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public float delay = 0.5f;
+    public bool reset = true;
 
     // Update is called once per frame
     void Update()
@@ -16,7 +18,10 @@ public class PlayerCombat : MonoBehaviour
         anim.ResetTrigger("Attack");
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Attack();
+            if(reset)
+            {
+                StartCoroutine(Recharge());
+            }
         }
     }
 
@@ -36,5 +41,26 @@ public class PlayerCombat : MonoBehaviour
                 enemy.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 1);
             }
         }
+    }
+
+    public IEnumerator Recharge()
+    {
+        reset = false;
+        anim.SetTrigger("Attack");
+
+        //detect enemies
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        //damage enemies
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.gameObject.CompareTag("Enemy"))
+            {
+                enemy.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 1);
+            }
+        }
+
+        yield return new WaitForSeconds(delay);
+        reset = true;
     }
 }
