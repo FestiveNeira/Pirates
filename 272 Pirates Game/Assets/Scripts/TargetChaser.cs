@@ -24,23 +24,32 @@ public class TargetChaser : MonoBehaviour
 
     void Start(){
         motor = GetComponent<IMove>();
-        target = this.GetComponent<TargetPicker>().target;
+        if (this.GetComponent<TargetPicker>().isTarget)
+        {
+            target = this.GetComponent<TargetPicker>().target;
+        }
     }
 
     void Update()
     {
-        target = this.GetComponent<TargetPicker>().target;
+        if (this.GetComponent<TargetPicker>().isTarget)
+        {
+            target = this.GetComponent<TargetPicker>().target;
+        }
+        //Check to see if we should go aggresive
+        if (this.GetComponent<TargetPicker>().isTarget)
+        {
+            if (!isAgro && (target.transform.position - transform.position).magnitude <= agroDistance)
+            {
+                isAgro = true;
+            }
+        }
     }
 
     void FixedUpdate(){
-        //Check to see if we should go aggresive
-        if (!isAgro && (target.transform.position - transform.position).magnitude <= agroDistance) {
-            isAgro = true;
-        }
-
         //if we are aggresive, lets move towards our target
-        dist = Mathf.Sqrt(new Vector2((target.transform.position.x - transform.position.x), 2*((target.transform.position.y) - (transform.position.y))).sqrMagnitude);
         if (isAgro && Time.time > lastUpdate + .1f) {
+            dist = Mathf.Sqrt(new Vector2((target.transform.position.x - transform.position.x), 2*((target.transform.position.y) - (transform.position.y))).sqrMagnitude);
             lastUpdate = Time.time;
             if (target != null){
                 if (new Vector2((target.transform.position.x - transform.position.x), 2*((target.transform.position.y) - (transform.position.y))).sqrMagnitude <= minimumDistance * minimumDistance) {
