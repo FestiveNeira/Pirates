@@ -29,6 +29,20 @@ public class HealthPlayer : MonoBehaviour
         }
     }
 
+    public void Heal(int amount)
+    {
+        if((amount + currentHealth) > 100)
+        {
+            currentHealth = 100;
+            healthBar.SetHealth(currentHealth);
+        }
+        else
+        {
+            currentHealth += amount;
+            healthBar.SetHealth(currentHealth);
+        }
+    }
+
     public void TakeDamage(GameObject source, int damage) {
         currentHealth -= damage;
 
