@@ -13,22 +13,31 @@ public class MultipleTargetCamera : MonoBehaviour
 
     public float smoothTime = 0.5f;
 
-    public float minZoom = 40f;
-    public float maxZoom = 10f;
-    public float zoomLimiter = 50f;
+    public float minZoom = 12f;
+    public float maxZoom = 8f;
+    public float zoomLimiter = 10f;
 
     public float minY = -3.2f;
     public float maxY = 12.7f;
 
     private Camera cam;
 
+    public float camhalfheight;
+
+    public float zoom;
+    public Vector3 position;
+
+    float tiletozoomratio = (15.9f/12f);
+
     private void Start()
     {
         cam = GetComponent<Camera>();
+        camhalfheight = (zoom*tiletozoomratio)/2;
     }
 
     private void LateUpdate()
     {
+        camhalfheight = (zoom*tiletozoomratio)/2;
         if (targets.Count == 0)
             return;
 
@@ -38,17 +47,23 @@ public class MultipleTargetCamera : MonoBehaviour
 
     void Zoom()
     {
-        float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / zoomLimiter);
+        float t = GetGreatestDistance() / zoomLimiter;
+        float newZoom = Mathf.Lerp(maxZoom, minZoom, t);
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, newZoom, Time.deltaTime);
+        zoom = cam.fieldOfView;
     }
 
     void Move()
     {
         Vector3 centerPoint = GetCenterPoint();
 
+        // get cam position
         Vector3 newPosition = centerPoint + offset;
+        // fix camera to bottom of screen
+        newPosition.y = (minY + camhalfheight) + offset.y;
 
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+        position = transform.position;
     }
 
     float GetGreatestDistance()
