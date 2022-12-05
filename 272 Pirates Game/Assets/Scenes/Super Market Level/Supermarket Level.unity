@@ -21866,7 +21866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1373354423}
   knockback: 20
-  maxHealth: 100
+  maxHealth: 10000
   currentHealth: 0
   IFrames: 1
   healthBar: {fileID: 1662148349}
