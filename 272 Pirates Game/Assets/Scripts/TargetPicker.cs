@@ -5,7 +5,6 @@ using UnityEngine;
 public class TargetPicker : MonoBehaviour
 {
     public GameObject[] targets = new GameObject[4];
-    public GameObject DefaultTarget;
     public GameObject target;
 
     public bool randtarget = false;
@@ -15,8 +14,6 @@ public class TargetPicker : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("PlayTracker") != null)
         {
             targets = GameObject.FindGameObjectsWithTag("PlayTracker");
-            DefaultTarget = targets[0];
-            target = DefaultTarget;
         }
     }
 

@@ -63,7 +63,8 @@ GameObject:
   - component: {fileID: 6486008806117074302}
   - component: {fileID: 256264781970183252}
   - component: {fileID: 7047975713675928997}
-  m_Layer: 3
+  - component: {fileID: 2996691164059818387}
+  m_Layer: 6
   m_Name: Clerk
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -175,7 +176,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  DefaultTarget: {fileID: 0}
   target: {fileID: 0}
   randtarget: 0
 --- !u!114 &7047975713675928997
@@ -194,6 +194,22 @@ MonoBehaviour:
   anim: {fileID: 7561373840814449998}
   maxHealth: 5
   currentHealth: 0
+--- !u!114 &2996691164059818387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556115463521746436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2cb697d7c78304a939358d28e73553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxX: 128
+  minX: -37
+  maxY: -2.4
+  minY: -7.5
 --- !u!1 &3005905066386551124
 GameObject:
   m_ObjectHideFlags: 0

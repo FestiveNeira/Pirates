@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject spawn3;
     public GameObject spawn4;
 
-    public int totalEnemies = 40;
+    public int totalEnemies;
 
     public static int enemyCount;
     public static int playerCount;
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        totalEnemies = (spawn1.GetComponent<SpawnPoint>().enemyTotal + spawn2.GetComponent<SpawnPoint>().enemyTotal + spawn3.GetComponent<SpawnPoint>().enemyTotal + spawn4.GetComponent<SpawnPoint>().enemyTotal);
         enemyCount = totalEnemies;
     }
 

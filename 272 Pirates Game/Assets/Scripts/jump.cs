@@ -16,6 +16,8 @@ public class jump : MonoBehaviour
     public float upGravityScale = 2f;
     [Tooltip("How does gravity effect me while I am falling")]
     public float downGravityScale = 3f;
+    [Tooltip("Correct standing height")]
+    public float fix = 0.8f;
 
     [Header("Ground Detection Options")]
     [Tooltip("Character's shadow object")]
@@ -38,16 +40,16 @@ public class jump : MonoBehaviour
     {
         collider.isTrigger = !onGround;
         // update in fringe cases
-        if (gameObject.transform.position.y > (shadow.transform.position.y + 0.41))
+        if (gameObject.transform.position.y > (shadow.transform.position.y + (fix + 0.01)))
         {
             UpdateGravityScale();
         }
         // catch
-        if (gameObject.transform.position.y < (shadow.transform.position.y + 0.40))
+        if (gameObject.transform.position.y < (shadow.transform.position.y + fix))
         {
             rb.gravityScale = 0;
             rb.velocity = Vector2.zero;
-            gameObject.transform.position = new Vector3(shadow.transform.position.x, shadow.transform.position.y + 0.4f, gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(shadow.transform.position.x, shadow.transform.position.y + fix, gameObject.transform.position.z);
             onGround = true;
         }
         // jump
@@ -70,7 +72,7 @@ public class jump : MonoBehaviour
         }
         else
         {
-            gameObject.transform.position = new Vector3(shadow.transform.position.x, shadow.transform.position.y + 0.4f, gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(shadow.transform.position.x, shadow.transform.position.y + fix, gameObject.transform.position.z);
         }
         // initialize jump
         if (jumped)

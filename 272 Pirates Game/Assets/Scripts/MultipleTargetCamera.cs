@@ -31,6 +31,10 @@ public class MultipleTargetCamera : MonoBehaviour
 
     private void Start()
     {
+        GameObject[] temp = GameObject.FindGameObjectsWithTag("PlayTracker");
+        foreach (GameObject x in temp) {
+            targets.Add(x.transform);
+        }
         cam = GetComponent<Camera>();
         camhalfheight = (zoom*tiletozoomratio)/2;
     }
@@ -70,7 +74,7 @@ public class MultipleTargetCamera : MonoBehaviour
     {
         Vector3 pos = new Vector3();
         foreach (Transform x in targets) {
-            if (x != null) {
+            if (x != null && x.parent.gameObject.activeSelf) {
                 pos = x.position;
                 break;
             }
@@ -79,7 +83,7 @@ public class MultipleTargetCamera : MonoBehaviour
         var bounds = new Bounds(pos, Vector3.zero);
         for (int i = 0; i < targets.Count; i++)
         {
-            if (targets[i] != null) {
+            if (targets[i] != null && targets[i].parent.gameObject.activeSelf) {
                 bounds.Encapsulate(targets[i].position);
             }
         }
@@ -91,7 +95,7 @@ public class MultipleTargetCamera : MonoBehaviour
     {
         Vector3 pos = new Vector3();
         foreach (Transform x in targets) {
-            if (x != null) {
+            if (x != null && x.parent.gameObject.activeSelf) {
                 pos = x.position;
             }
         }
@@ -99,7 +103,7 @@ public class MultipleTargetCamera : MonoBehaviour
         var bounds = new Bounds(pos, Vector3.zero);
         for(int i = 0;  i < targets.Count; i++)
         {
-            if (targets[i] != null) {
+            if (targets[i] != null && targets[i].parent.gameObject.activeSelf) {
                 bounds.Encapsulate(targets[i].position);
             }
         }

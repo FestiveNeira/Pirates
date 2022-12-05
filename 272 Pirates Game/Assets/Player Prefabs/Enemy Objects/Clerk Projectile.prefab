@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2743399587480432511}
   - component: {fileID: 466840643018807546}
   - component: {fileID: 1661882825343878536}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Clerk Projectile
   m_TagString: SpecialProjectile
   m_Icon: {fileID: 0}
