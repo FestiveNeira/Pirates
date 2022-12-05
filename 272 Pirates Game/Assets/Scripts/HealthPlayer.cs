@@ -42,7 +42,7 @@ public class HealthPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && immunitytimer <= 0)
+        if (collision.gameObject.CompareTag("Enemy") && immunitytimer <= 0)
         {
             immunitytimer = IFrames;
             TakeDamage(10);

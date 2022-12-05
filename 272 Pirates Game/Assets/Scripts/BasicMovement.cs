@@ -27,11 +27,13 @@ public class BasicMovement : MonoBehaviour, IMove
         Vector2 direction = new Vector2(destination.x - transform.position.x, destination.y - transform.position.y);
         Flip(direction.x);
         direction.y = direction.y / 2;
-        if (direction.sqrMagnitude > .01f) {
+        if (direction.sqrMagnitude > .01f)
+        {
             rb.velocity = direction.normalized * moveSpeed;
             UpdateAnimations(Mathf.Abs(direction.normalized.x), Mathf.Abs(direction.normalized.y));
         }
-        else {
+        else
+        {
             rb.velocity = Vector2.zero;
             UpdateAnimations(0, 0);
         }

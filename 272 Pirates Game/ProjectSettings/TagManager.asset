@@ -12,6 +12,7 @@ TagManager:
   - PlayTracker
   - Cannons
   - ManagerBossStuff
+  - BossHealth
   layers:
   - Default
   - TransparentFX

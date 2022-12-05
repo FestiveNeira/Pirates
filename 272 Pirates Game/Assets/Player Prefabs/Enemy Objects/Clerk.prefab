@@ -194,6 +194,7 @@ MonoBehaviour:
   anim: {fileID: 7561373840814449998}
   maxHealth: 5
   currentHealth: 0
+  knock: {fileID: 0}
 --- !u!114 &2996691164059818387
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject spawn3;
     public GameObject spawn4;
 
+    public GameObject bossHealthBar;
+
     public int totalEnemies;
 
     public static int enemyCount;
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour
         {
             wall3.SetActive(false);
             spawn4.SetActive(true);
+            bossHealthBar.SetActive(true);
         }
 
         if(playerCount <= 0)
