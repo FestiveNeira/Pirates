@@ -12,7 +12,7 @@ public class HealthPlayer : MonoBehaviour
     public int currentHealth;
 
     public float IFrames = 1f;
-    float immunitytimer = 0;
+    public float immunitytimer = 0;
 
     public HealthBar healthBar;
 

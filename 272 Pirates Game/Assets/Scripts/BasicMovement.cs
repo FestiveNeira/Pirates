@@ -42,6 +42,8 @@ public class BasicMovement : MonoBehaviour, IMove
             {
                 rb.velocity = Vector2.zero;
                 UpdateAnimations(0, 0);
+                float dir = this.gameObject.GetComponent<TargetPicker>().target.transform.position.x - this.gameObject.transform.position.x;
+                Flip(dir);
             }
             // regulate shadow size
             float dist = Mathf.Abs(character.transform.position.y - this.transform.position.y);
