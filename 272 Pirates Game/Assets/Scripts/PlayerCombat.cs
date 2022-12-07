@@ -6,13 +6,10 @@ public class PlayerCombat : MonoBehaviour
 {
     public Animator anim;
 
-    public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
     public float delay = 0.5f;
     public bool reset = true;
 
-    List<GameObject> currentCollisions = new List<GameObject>();
+    public List<GameObject> currentCollisions = new List<GameObject>();
 
     // Update is called once per frame
     void Update()
@@ -25,24 +22,8 @@ public class PlayerCombat : MonoBehaviour
                 StartCoroutine(Recharge());
             }
         }
-    }
 
-    void Attack()
-    {
-        //play attack animation
-        anim.SetTrigger("Attack");
 
-        //detect enemies
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-        //damage enemies
-        foreach(Collider2D enemy in hitEnemies)
-        {
-            if(enemy.gameObject.CompareTag("Enemy"))
-            {
-                enemy.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 1);
-            }
-        }
     }
 
     public IEnumerator Recharge()
@@ -50,12 +31,12 @@ public class PlayerCombat : MonoBehaviour
         reset = false;
         anim.SetTrigger("Attack");
 
-        //damage enemies
-        foreach (GameObject enemy in currentCollisions)
+        //damage enemies   (GameObject enemy in currentCollisions)
+        for (int i = 0; i < currentCollisions.Count; i++)
         {
-            if (enemy.gameObject.CompareTag("Enemy"))
+            if (currentCollisions[i].gameObject.CompareTag("Enemy"))
             {
-                enemy.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 1);
+                currentCollisions[i].GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 1);
             }
         }
 
@@ -63,15 +44,23 @@ public class PlayerCombat : MonoBehaviour
         reset = true;
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         // Add the GameObject collided with to the list.
         currentCollisions.Add(col.gameObject);
+        foreach (GameObject gObject in currentCollisions)
+        {
+            print(gObject.name);
+        }
     }
 
-    void OnCollisionExit(Collision col)
+    void OnTriggerExit2D(Collider2D col)
     {
         // Remove the GameObject collided with from the list.
         currentCollisions.Remove(col.gameObject);
+        foreach (GameObject gObject in currentCollisions)
+        {
+            print(gObject.name);
+        }
     }
 }

@@ -32,13 +32,11 @@ public class jump : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.velocity = Vector2.zero;
-        collider = GetComponent<CapsuleCollider2D>();
         jumppos = shadow.transform.position.y;
     }
 
     void Update()
     {
-        collider.isTrigger = !onGround;
         // update in fringe cases
         if (gameObject.transform.position.y > (shadow.transform.position.y + (fix + 0.01)))
         {

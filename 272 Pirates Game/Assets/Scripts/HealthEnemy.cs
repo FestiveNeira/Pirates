@@ -38,6 +38,7 @@ public class HealthEnemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            source.GetComponent<PlayerCombat>().currentCollisions.Remove(this.gameObject);
             GameManager.enemyCount -= 1;
             Destroy(parent);
         }
