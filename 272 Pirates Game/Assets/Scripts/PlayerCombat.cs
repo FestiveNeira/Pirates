@@ -12,6 +12,8 @@ public class PlayerCombat : MonoBehaviour
     public float delay = 0.5f;
     public bool reset = true;
 
+    List<GameObject> currentCollisions = new List<GameObject>();
+
     // Update is called once per frame
     void Update()
     {
@@ -48,11 +50,8 @@ public class PlayerCombat : MonoBehaviour
         reset = false;
         anim.SetTrigger("Attack");
 
-        //detect enemies
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
         //damage enemies
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (GameObject enemy in currentCollisions)
         {
             if (enemy.gameObject.CompareTag("Enemy"))
             {
@@ -62,5 +61,17 @@ public class PlayerCombat : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
         reset = true;
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        // Add the GameObject collided with to the list.
+        currentCollisions.Add(col.gameObject);
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        // Remove the GameObject collided with from the list.
+        currentCollisions.Remove(col.gameObject);
     }
 }
