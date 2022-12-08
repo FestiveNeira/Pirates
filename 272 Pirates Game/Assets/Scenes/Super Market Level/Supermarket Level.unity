@@ -23219,22 +23219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1164474951}
     m_Modifications:
-    - target: {fileID: 1373354437, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Controller
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373354437, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373354437, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
-      value: ba579c63-f912-47d7-8d59-03e22dffd509
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373354437, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
-      value: Player/Select[/DualSenseGamepadHID/buttonSouth]
-      objectReference: {fileID: 0}
     - target: {fileID: 611800800579506083, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
       propertyPath: healthBar
       value: 

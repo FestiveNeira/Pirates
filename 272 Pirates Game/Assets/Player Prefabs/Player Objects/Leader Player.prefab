@@ -315,6 +315,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 5efdf02e-bec1-43e6-b9e2-8de3e84fe0aa
     m_ActionName: Player/Jump[/Keyboard/space,/DualSenseGamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba579c63-f912-47d7-8d59-03e22dffd509
+    m_ActionName: Player/Select[/DualSenseGamepadHID/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Player controls
   m_DefaultActionMap: Player
