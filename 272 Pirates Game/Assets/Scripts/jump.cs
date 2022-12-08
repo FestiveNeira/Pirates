@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class jump : MonoBehaviour
 {
+    //[SerializeField] private InputAction leap;
+
     Rigidbody2D rb;
     CapsuleCollider2D collider;
 
@@ -33,7 +36,19 @@ public class jump : MonoBehaviour
         rb.gravityScale = 0;
         rb.velocity = Vector2.zero;
         jumppos = shadow.transform.position.y;
+
+        //leap.performed += OnJumpPerformed;
     }
+
+   /* public void OnJumpPerformed(InputAction.CallbackContext context)
+    {
+        if (onGround && !jumped)
+        {
+            jumped = true;
+            onGround = false;
+            jumppos = shadow.transform.position.y;
+        }
+    }*/
 
     void Update()
     {
@@ -50,7 +65,7 @@ public class jump : MonoBehaviour
             gameObject.transform.position = new Vector3(shadow.transform.position.x, shadow.transform.position.y + fix, gameObject.transform.position.z);
             onGround = true;
         }
-        // jump
+        //jump
         if (onGround && !jumped && Input.GetKeyDown(KeyCode.Space))
         {
             jumped = true;

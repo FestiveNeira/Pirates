@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 //[RequireComponent(typeof(IMove))]
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] private InputAction movement;
+    //[SerializeField] private InputAction movement;
 
     IMove motor;
     IJump jumpMotor;
@@ -15,11 +15,12 @@ public class PlayerInputController : MonoBehaviour
         motor = GetComponent<IMove>();
         jumpMotor = GetComponent<IJump>();
 
-        movement.performed += OnMovementPerformed;
-        movement.canceled += OnMovementPerformed;
+        //movement.performed += OnMovementPerformed;
+        //movement.canceled += OnMovementPerformed;
     }
 
-    private void OnMovementPerformed(InputAction.CallbackContext context)
+
+    public void OnMovementPerformed(InputAction.CallbackContext context)
     {
         var direction = context.ReadValue<Vector2>();
 
@@ -29,11 +30,11 @@ public class PlayerInputController : MonoBehaviour
 
     private void OnDisable()
     {
-        movement.Disable();
+        //movement.Disable();
     }
     private void OnEnable()
     {
-        movement.Enable();
+       //movement.Enable();
     }
 
     void Update(){
