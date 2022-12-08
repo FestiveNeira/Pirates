@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
         if(playerCount <= 0)
         {
-            SceneManager.LoadScene("DeathScene");
+            //SceneManager.LoadScene("DeathScene");
         }
     }
 }
