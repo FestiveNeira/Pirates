@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
     public GameObject spawn4;
 
     public GameObject bossHealthBar;
+    public GameObject p1HealthBar;
+    public GameObject p2HealthBar;
+    public GameObject p3HealthBar;
+    public GameObject p4HealthBar;
+    public PlayerSpawner ps;
 
     public int totalEnemies;
 
@@ -26,6 +31,23 @@ public class GameManager : MonoBehaviour
     {
         totalEnemies = (spawn1.GetComponent<SpawnPoint>().enemyTotal + spawn2.GetComponent<SpawnPoint>().enemyTotal + spawn3.GetComponent<SpawnPoint>().enemyTotal + spawn4.GetComponent<SpawnPoint>().enemyTotal);
         enemyCount = totalEnemies;
+
+        if(ps.p1)
+        {
+            p1HealthBar.SetActive(true);
+        }
+        if (ps.p2)
+        {
+            p2HealthBar.SetActive(true);
+        }
+        if (ps.p3)
+        {
+            p3HealthBar.SetActive(true);
+        }
+        if (ps.p4)
+        {
+            p4HealthBar.SetActive(true);
+        }
     }
 
     // Update is called once per frame
