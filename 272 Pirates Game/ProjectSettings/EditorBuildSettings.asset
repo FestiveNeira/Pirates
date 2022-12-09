@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 1c5d7e88ba78e034a944ecf95bf0eed7
   - enabled: 1
+    path: Assets/Scenes/Charcter Select.unity
+    guid: 8054240f39995254ebb78d7fc6afc7af
+  - enabled: 1
     path: Assets/Scenes/Super Market Level/Supermarket Level.unity
     guid: cca9564065414d74097118e2f6024662
   - enabled: 1
