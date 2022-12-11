@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  speed: 0
-  dist: 0
+  speed: -12
+  dist: 6
 --- !u!1 &6367460146736836331
 GameObject:
   m_ObjectHideFlags: 0

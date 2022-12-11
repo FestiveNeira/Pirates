@@ -60,14 +60,14 @@ public class ParrotSpecial : MonoBehaviour
     public void Recharge()
     {
         anim.SetTrigger("Special");
-        if (anim.transform.rotation.y == 0) {speed = -Mathf.Abs(speed);}
+        if (anim.transform.rotation.y == 180) {speed = -Mathf.Abs(speed);}
         else {speed = Mathf.Abs(speed);}
 
         var temp = Instantiate(bird, this.transform.position, Quaternion.identity);
 
-        bird.GetComponent<BirdMove>().owner = parent;
-        bird.GetComponent<BirdMove>().speed = speed;
-        bird.GetComponent<BirdMove>().dist = dist;
-        bird.SetActive(true);
+        temp.GetComponent<BirdMove>().owner = parent;
+        temp.GetComponent<BirdMove>().speed = speed;
+        temp.GetComponent<BirdMove>().dist = dist;
+        temp.SetActive(true);
     }
 }
