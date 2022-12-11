@@ -40,6 +40,7 @@ public class HealthEnemy : MonoBehaviour
         {
             source.GetComponent<PlayerCombat>().currentCollisions.Remove(this.gameObject);
             GameManager.enemyCount -= 1;
+            Lvl2GameManager.enemyCount -= 1;
             Destroy(parent);
         }
     }

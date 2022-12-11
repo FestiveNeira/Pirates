@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 3203981199999717711}
   - component: {fileID: 5545511993917162760}
   - component: {fileID: 2937442456200468702}
-  - component: {fileID: 59624547918543733}
   - component: {fileID: 8847119164832629249}
   - component: {fileID: 8987352533510044025}
   - component: {fileID: 4362879122123316654}
   - component: {fileID: 4905429270577934841}
+  - component: {fileID: 6135112787375353594}
   m_Layer: 6
   m_Name: Police lvl 2
   m_TagString: Enemy
@@ -77,24 +77,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.85, y: 0.425}
   m_Direction: 1
---- !u!114 &59624547918543733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269235058984294779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd514ee5c74b7ca4f9d1bdf3fd1a1cd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  agroDistance: 100
-  stoppingDistanceY: 1
-  minimumDistanceX: 4
-  maximumDistanceX: 8
-  dist: 0
 --- !u!114 &8847119164832629249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +149,23 @@ MonoBehaviour:
   minX: -37
   maxY: -2.4
   minY: -7.5
+--- !u!114 &6135112787375353594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269235058984294779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff421bccc60c46ee8d8434cfa104732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  agroDistance: 100
+  stoppingDistance: 0.1
+  minimumDistance: 0.05
+  dist: 0
 --- !u!1 &680808940951033387
 GameObject:
   m_ObjectHideFlags: 0
