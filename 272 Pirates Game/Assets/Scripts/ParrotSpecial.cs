@@ -28,6 +28,7 @@ public class ParrotSpecial : MonoBehaviour
 
     void Update()
     {
+        RechargeEnergy();
         anim.ResetTrigger("Special");
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -50,6 +51,9 @@ public class ParrotSpecial : MonoBehaviour
                 currentEnergy = timer;
             }
             energyBar.SetEnergy(currentEnergy);
+        }
+        else {
+            timer = 0;
         }
     }
 

@@ -27,6 +27,7 @@ public class BigGuySpecial : MonoBehaviour
 
     void Update()
     {
+        RechargeEnergy();
         anim.ResetTrigger("Special");
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -49,6 +50,9 @@ public class BigGuySpecial : MonoBehaviour
                 currentEnergy = timer;
             }
             energyBar.SetEnergy(currentEnergy);
+        }
+        else {
+            timer = 0;
         }
     }
 

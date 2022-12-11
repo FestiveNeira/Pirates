@@ -27,6 +27,7 @@ public class DoublePatchesSpecial : MonoBehaviour
 
     void Update()
     {
+        RechargeEnergy();
         anim.ResetTrigger("Special");
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -50,6 +51,9 @@ public class DoublePatchesSpecial : MonoBehaviour
             }
             energyBar.SetEnergy(currentEnergy);
         }
+        else {
+            timer = 0;
+        }
     }
 
     public void Recharge()
@@ -58,7 +62,7 @@ public class DoublePatchesSpecial : MonoBehaviour
 
         GameObject bullet = BulletPool.Pool.GetPooledObject();
         if (bullet != null) {
-            if (anim.transform.rotation.y == 0) {speed = -Mathf.Abs(speed);}
+            if (anim.transform.rotation.y != 0) {speed = -Mathf.Abs(speed);}
             else {speed = Mathf.Abs(speed);}
 
             bullet.transform.position = this.transform.position;

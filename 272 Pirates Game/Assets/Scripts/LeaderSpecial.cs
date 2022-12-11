@@ -34,7 +34,6 @@ public class LeaderSpecial : MonoBehaviour
                 Recharge();
                 currentEnergy = 0;
                 energyBar.SetEnergy(currentEnergy);
-                Debug.Log("click " + currentEnergy);
             }
         }
     }
