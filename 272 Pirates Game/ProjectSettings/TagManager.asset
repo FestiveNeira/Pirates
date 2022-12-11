@@ -19,6 +19,7 @@ TagManager:
   - RangedHitbox
   - HealthBar
   - EnergyBar
+  - ChaseTarget
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - Characters
   - RangedHitbox
   - DmgZone
-  - 
+  - InvisibleBarriers
   - 
   - 
   - 
