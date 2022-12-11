@@ -6,10 +6,12 @@ public class BirdMove : MonoBehaviour
 {
     Rigidbody2D rb;
 
+    public ParrotSpecial origin;
     public GameObject owner;
     public int speed;
     public float dist;
     Vector3 start;
+    Vector3 ownerLoc;
 
     bool turn = false;
 
@@ -23,22 +25,31 @@ public class BirdMove : MonoBehaviour
 
     void Update()
     {
+        delCheck();
         if (getDist(this.gameObject.transform.position, start) > dist) {
             turn = true;
             Flip();
         }
         if (turn) {
-            Vector3 temp = new Vector3(owner.transform.position.x, owner.transform.position.y + 1, 0);
-            rb.velocity = (temp - this.gameObject.transform.position).normalized * Mathf.Abs(speed);
+            ownerLoc = new Vector3(owner.transform.position.x, owner.transform.position.y + 1, 0);
+            rb.velocity = (ownerLoc - this.gameObject.transform.position).normalized * Mathf.Abs(speed);
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Enemy")) {
-            col.gameObject.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 1);
+        if (col.gameObject.CompareTag("EnemyRangedHit")) {
+            col.gameObject.transform.parent.gameObject.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 1);
         }
         else if (GameObject.ReferenceEquals(col.gameObject.transform.parent.parent.parent.gameObject, owner) && turn) {
+            origin.hasBird = true;
+            Destroy(gameObject);
+        }
+    }
+
+    public void delCheck() {
+        if ((getDist(this.transform.position, ownerLoc) < 1) && turn) {
+            origin.hasBird = true;
             Destroy(gameObject);
         }
     }

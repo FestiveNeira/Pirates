@@ -11,6 +11,7 @@ public class ParrotSpecial : MonoBehaviour
 
     public float timer = 0f;
     public float cooldown = 2.5f;
+    public bool hasBird = true;
 
     public EnergyBar energyBar;
 
@@ -35,6 +36,7 @@ public class ParrotSpecial : MonoBehaviour
             if(currentEnergy >= 1)
             {
                 Recharge();
+                hasBird = false;
                 currentEnergy = 0;
                 energyBar.SetEnergy(currentEnergy);
             }
@@ -42,7 +44,7 @@ public class ParrotSpecial : MonoBehaviour
     }
 
     public void RechargeEnergy() {
-        if (currentEnergy < 1) {
+        if (currentEnergy < 1 && hasBird) {
             timer += Time.deltaTime;
             if (timer > cooldown) {
                 currentEnergy = 1;
@@ -60,11 +62,12 @@ public class ParrotSpecial : MonoBehaviour
     public void Recharge()
     {
         anim.SetTrigger("Special");
-        if (anim.transform.rotation.y == 180) {speed = -Mathf.Abs(speed);}
+        if (anim.transform.rotation.y != 0) {speed = -Mathf.Abs(speed);}
         else {speed = Mathf.Abs(speed);}
 
         var temp = Instantiate(bird, this.transform.position, Quaternion.identity);
 
+        temp.GetComponent<BirdMove>().origin = this;
         temp.GetComponent<BirdMove>().owner = parent;
         temp.GetComponent<BirdMove>().speed = speed;
         temp.GetComponent<BirdMove>().dist = dist;
