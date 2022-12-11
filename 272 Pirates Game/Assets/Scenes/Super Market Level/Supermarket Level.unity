@@ -1325,7 +1325,7 @@ GameObject:
   - component: {fileID: 365380510}
   - component: {fileID: 365380509}
   - component: {fileID: 365380508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrier 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41005,7 +41005,7 @@ GameObject:
   - component: {fileID: 1755647990}
   - component: {fileID: 1755647989}
   - component: {fileID: 1755647988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrier 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51791,7 +51791,7 @@ GameObject:
   - component: {fileID: 2001377551}
   - component: {fileID: 2001377550}
   - component: {fileID: 2001377549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrier 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
