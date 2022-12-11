@@ -6,6 +6,7 @@ public class ActivateScroller : MonoBehaviour
 {
     public GameObject Outside;
     public GameObject Inside;
+    public GameObject LoseZone;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,6 +14,7 @@ public class ActivateScroller : MonoBehaviour
         {
             Outside.SetActive(true);
             Inside.SetActive(false);
+            LoseZone.SetActive(true);
             Destroy(gameObject);
         }
     }

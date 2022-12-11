@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+ using UnityEngine.SceneManagement;
 
-public class Level2Win : MonoBehaviour
+public class LoadScene : MonoBehaviour
 {
+    public string scene;
+
     void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.CompareTag("Player")) {
-            // Go to next scene (Win)
+            SceneManager.LoadScene(scene);
         }
     }
 }

@@ -14,6 +14,7 @@ public class SmoothCameraFollow : MonoBehaviour
     {
         //target = GameObject.FindGameObjectWithTag("Player").transform;
     }
+    
     private void FixedUpdate()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
