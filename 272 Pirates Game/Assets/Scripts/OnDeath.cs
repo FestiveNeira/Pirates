@@ -7,6 +7,6 @@ public class OnDeath : MonoBehaviour
 {
     private void OnDestroy()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Level 2");
     }
 }
