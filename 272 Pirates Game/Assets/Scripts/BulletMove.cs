@@ -8,7 +8,7 @@ public class BulletMove : MonoBehaviour
     public int speed;
     public float timetolive;
 
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
