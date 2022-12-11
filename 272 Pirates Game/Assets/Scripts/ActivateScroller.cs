@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ActivateScroller : MonoBehaviour
 {
-    public GameObject scroller;
+    public GameObject Outside;
+    public GameObject Inside;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("PlayTracker"))
         {
-            scroller.SetActive(true);
+            Outside.SetActive(true);
+            Inside.SetActive(false);
             Destroy(gameObject);
         }
     }
