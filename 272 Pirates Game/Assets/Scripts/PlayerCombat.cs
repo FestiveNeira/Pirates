@@ -22,8 +22,6 @@ public class PlayerCombat : MonoBehaviour
                 StartCoroutine(Recharge());
             }
         }
-
-
     }
 
     public IEnumerator Recharge()
@@ -48,19 +46,11 @@ public class PlayerCombat : MonoBehaviour
     {
         // Add the GameObject collided with to the list.
         currentCollisions.Add(col.gameObject);
-        foreach (GameObject gObject in currentCollisions)
-        {
-            print(gObject.name);
-        }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
         // Remove the GameObject collided with from the list.
         currentCollisions.Remove(col.gameObject);
-        foreach (GameObject gObject in currentCollisions)
-        {
-            print(gObject.name);
-        }
     }
 }
