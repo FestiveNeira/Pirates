@@ -921,6 +921,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.9665219
       objectReference: {fileID: 0}
+    - target: {fileID: 3700252243916940384, guid: 6d4125b82b54049478990beee7a24848, type: 3}
+      propertyPath: energyBar
+      value: 
+      objectReference: {fileID: 875324264}
     - target: {fileID: 3865613279063313034, guid: 6d4125b82b54049478990beee7a24848, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.98465776
@@ -1188,6 +1192,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5068832603233481745, guid: 560f021ce19611a4e885f5a597875008, type: 3}
+      propertyPath: energyBar
+      value: 
+      objectReference: {fileID: 875324266}
     - target: {fileID: 5721703750237665945, guid: 560f021ce19611a4e885f5a597875008, type: 3}
       propertyPath: healthBar
       value: 
@@ -21626,6 +21634,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1164474951}
     m_Modifications:
+    - target: {fileID: 1051483489667264074, guid: d1555d62e6488ef4f92a1c05cca9b434, type: 3}
+      propertyPath: energyBar
+      value: 
+      objectReference: {fileID: 875324263}
+    - target: {fileID: 1125576374626255466, guid: d1555d62e6488ef4f92a1c05cca9b434, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1192073413161255549, guid: d1555d62e6488ef4f92a1c05cca9b434, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -21729,6 +21745,10 @@ PrefabInstance:
     - target: {fileID: 3874966772605034009, guid: d1555d62e6488ef4f92a1c05cca9b434, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117692013244016758, guid: d1555d62e6488ef4f92a1c05cca9b434, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4529889681064438172, guid: d1555d62e6488ef4f92a1c05cca9b434, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22435,6 +22455,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
+--- !u!114 &875324263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8269218403028071170, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
+  m_PrefabInstance: {fileID: 875324262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6dd3383144b734099c99eff9bb6738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &875324264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4529724345963989310, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
+  m_PrefabInstance: {fileID: 875324262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6dd3383144b734099c99eff9bb6738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &875324265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1628742493887922480, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
+  m_PrefabInstance: {fileID: 875324262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6dd3383144b734099c99eff9bb6738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &875324266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3991586438944252040, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
+  m_PrefabInstance: {fileID: 875324262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6dd3383144b734099c99eff9bb6738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &881683860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23166,6 +23230,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1662148349}
+    - target: {fileID: 1111046892180867462, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
+      propertyPath: energyBar
+      value: 
+      objectReference: {fileID: 875324265}
     - target: {fileID: 1528374819122598427, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.83747065

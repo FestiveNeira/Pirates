@@ -6,22 +6,18 @@ public class ParrotSpecial : MonoBehaviour
 {
     public Animator anim;
 
-    public GameObject parent;
+    public float maxenergy = 1;
+    public float currentEnergy;
 
-    public int maxenergy = 100;
-    public int currentEnergy;
-    public int energyCost = 10;
-
-    public float coolmax = 2.5f;
-    public float cooldown = 0;
-
-    public int speed = 12;
-    public float dist = 6f;
+    public float timer = 0f;
+    public float cooldown = 2.5f;
 
     public EnergyBar energyBar;
-    public bool usedSpecial = false;
 
+    public GameObject parent;
     public GameObject bird;
+    public int speed = 12;
+    public float dist = 6f;
 
     void Start()
     {
@@ -32,22 +28,33 @@ public class ParrotSpecial : MonoBehaviour
 
     void Update()
     {
-        cooldown -= Time.deltaTime;
         anim.ResetTrigger("Special");
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if(cooldown <= 0)
+            if(currentEnergy >= 1)
             {
                 Recharge();
-                currentEnergy -= energyCost;
+                currentEnergy = 0;
                 energyBar.SetEnergy(currentEnergy);
             }
         }
     }
 
+    public void RechargeEnergy() {
+        if (currentEnergy < 1) {
+            timer += Time.deltaTime;
+            if (timer > cooldown) {
+                currentEnergy = 1;
+            }
+            else {
+                currentEnergy = timer;
+            }
+            energyBar.SetEnergy(currentEnergy);
+        }
+    }
+
     public void Recharge()
     {
-        cooldown = coolmax;
         anim.SetTrigger("Special");
         if (anim.transform.rotation.y == 0) {speed = -Mathf.Abs(speed);}
         else {speed = Mathf.Abs(speed);}

@@ -6,20 +6,17 @@ public class DoublePatchesSpecial : MonoBehaviour
 {
     public Animator anim;
 
-    public int maxenergy = 100;
-    public int currentEnergy;
-    public int energyCost = 5;
+    public float maxenergy = 1;
+    public float currentEnergy;
 
-    public float coolmax = 2.5f;
-    public float cooldown = 0;
-
-    public int speed = 12;
-    public float liveTime = 5f;
+    public float timer = 0f;
+    public float cooldown = 2.5f;
 
     public EnergyBar energyBar;
-    public bool usedSpecial = false;
 
     public GameObject bullet;
+    public int speed = 12;
+    public float liveTime = 5f;
 
     void Start()
     {
@@ -30,22 +27,33 @@ public class DoublePatchesSpecial : MonoBehaviour
 
     void Update()
     {
-        cooldown -= Time.deltaTime;
         anim.ResetTrigger("Special");
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if(cooldown <= 0)
+            if(currentEnergy >= 1)
             {
                 Recharge();
-                currentEnergy -= energyCost;
+                currentEnergy = 0;
                 energyBar.SetEnergy(currentEnergy);
             }
         }
     }
 
+    public void RechargeEnergy() {
+        if (currentEnergy < 1) {
+            timer += Time.deltaTime;
+            if (timer > cooldown) {
+                currentEnergy = 1;
+            }
+            else {
+                currentEnergy = timer;
+            }
+            energyBar.SetEnergy(currentEnergy);
+        }
+    }
+
     public void Recharge()
     {
-        cooldown = coolmax;
         anim.SetTrigger("Special");
 
         GameObject bullet = BulletPool.Pool.GetPooledObject();
@@ -61,7 +69,7 @@ public class DoublePatchesSpecial : MonoBehaviour
             bullet.SetActive(true);
         }
         else {
-            currentEnergy += energyCost;
+            currentEnergy = 1;
             energyBar.SetEnergy(currentEnergy);
         }
     }

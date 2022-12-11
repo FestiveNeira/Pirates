@@ -6,15 +6,13 @@ public class LeaderSpecial : MonoBehaviour
 {
     public Animator anim;
 
-    public int maxenergy = 100;
-    public int currentEnergy;
-    public int energyCost = 25;
+    public float maxenergy = 1;
+    public float currentEnergy;
 
-    public float coolmax = 2.5f;
-    public float cooldown = 0;
+    public float timer = 0f;
+    public float cooldown = 2.5f;
 
     public EnergyBar energyBar;
-    public bool usedSpecial = false;
 
     public List<GameObject> currentCollisions = new List<GameObject>();
 
@@ -27,22 +25,35 @@ public class LeaderSpecial : MonoBehaviour
 
     void Update()
     {
-        cooldown -= Time.deltaTime;
+        RechargeEnergy();
         anim.ResetTrigger("Special");
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
-            if(cooldown <= 0)
+            if(currentEnergy >= 1)
             {
+            Debug.Log("click");
                 Recharge();
-                currentEnergy -= energyCost;
+                currentEnergy = 0;
                 energyBar.SetEnergy(currentEnergy);
             }
         }
     }
 
+    public void RechargeEnergy() {
+        if (currentEnergy < 1) {
+            timer += Time.deltaTime;
+            if (timer > cooldown) {
+                currentEnergy = 1;
+            }
+            else {
+                currentEnergy = timer;
+            }
+            energyBar.SetEnergy(currentEnergy);
+        }
+    }
+
     public void Recharge()
     {
-        cooldown = coolmax;
         anim.SetTrigger("Special");
 
         //damage enemies

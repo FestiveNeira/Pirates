@@ -18,6 +18,7 @@ TagManager:
   - EnemyRangedHit
   - RangedHitbox
   - HealthBar
+  - EnergyBar
   layers:
   - Default
   - TransparentFX

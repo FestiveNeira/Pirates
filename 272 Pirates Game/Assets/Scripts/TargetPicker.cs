@@ -12,7 +12,7 @@ public class TargetPicker : MonoBehaviour
 
     void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("PlayTracker") != null)
+        if (GameObject.FindGameObjectsWithTag("PlayTracker").Length != 0)
         {
             targets = GameObject.FindGameObjectsWithTag("PlayTracker");
             target = targets[0];
@@ -23,41 +23,46 @@ public class TargetPicker : MonoBehaviour
 
     void Update()
     {
-        if (randtarget)
-        {
-            int ind = Random.Range(0, targets.Length);
-            bool isChar = false;
-            foreach (GameObject t in targets)
+        if (targets.Length != 0) {
+            if (randtarget)
             {
-                if (t != null)
+                int ind = Random.Range(0, targets.Length);
+                bool isChar = false;
+                foreach (GameObject t in targets)
                 {
-                    isChar = true;
-                }
-            }
-            if (isChar)
-            {
-                while (targets[ind] == null)
-                {
-                    ind = Random.Range(0, targets.Length);
-                }
-            }
-            target = targets[ind];
-        }
-        else
-        {
-            double temp = -1;
-            foreach (GameObject t in targets)
-            {
-                if (t != null && t.activeSelf)
-                {
-                    double dist = (transform.position - t.transform.position).sqrMagnitude;
-                    if(temp == -1 || dist < temp)
+                    if (t != null)
                     {
-                        target = t;
-                        temp = dist;
+                        isChar = true;
+                    }
+                }
+                if (isChar)
+                {
+                    while (targets[ind] == null)
+                    {
+                        ind = Random.Range(0, targets.Length);
+                    }
+                }
+                target = targets[ind];
+            }
+            else
+            {
+                double temp = -1;
+                foreach (GameObject t in targets)
+                {
+                    if (t != null && t.activeSelf)
+                    {
+                        double dist = (transform.position - t.transform.position).sqrMagnitude;
+                        if(temp == -1 || dist < temp)
+                        {
+                            target = t;
+                            temp = dist;
+                        }
                     }
                 }
             }
+        }
+        else {
+            Start();
         }
     }
 }
