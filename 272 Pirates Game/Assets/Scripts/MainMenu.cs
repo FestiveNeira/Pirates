@@ -12,6 +12,11 @@ public class MainMenu : MonoBehaviour
     
     public void StartGame()
     {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void CharacterSelect()
+    {
         SceneManager.LoadScene("Charcter Select");
     }
 }
