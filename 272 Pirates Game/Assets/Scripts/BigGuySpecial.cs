@@ -59,12 +59,17 @@ public class BigGuySpecial : MonoBehaviour
     public void Recharge()
     {
         anim.SetTrigger("Special");
+        bool flipped = false;
+        if (anim.transform.rotation.y != 0) {flipped = true;}
 
         //spawn cannon ball
         Vector3 initvelocity = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
+        initvelocity = new Vector3(Mathf.Abs(initvelocity.x), initvelocity.y, 0);
         var temp = Instantiate(cannonBall, this.transform.position, Quaternion.identity);
         temp.GetComponent<BigGuyCannonBall>().target = initvelocity.normalized;
         temp.GetComponent<BigGuyCannonBall>().explodeY = parent.transform.position.y;
         temp.GetComponent<BigGuyCannonBall>().strength = strength;
+        temp.GetComponent<BigGuyCannonBall>().parent = parent;
+        temp.GetComponent<BigGuyCannonBall>().flip = flipped;
     }
 }
