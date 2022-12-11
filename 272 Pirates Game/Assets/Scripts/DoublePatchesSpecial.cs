@@ -66,7 +66,7 @@ public class DoublePatchesSpecial : MonoBehaviour
             else {speed = Mathf.Abs(speed);}
 
             bullet.transform.position = this.transform.position;
-            bullet.transform.rotation = anim.transform.rotation;
+            bullet.transform.rotation = Quaternion.Euler(0, anim.transform.rotation.y - 180, 0);
             bullet.GetComponent<BulletMove>().friendly = true;
             bullet.GetComponent<BulletMove>().speed = speed;
             bullet.GetComponent<BulletMove>().timetolive = liveTime;
