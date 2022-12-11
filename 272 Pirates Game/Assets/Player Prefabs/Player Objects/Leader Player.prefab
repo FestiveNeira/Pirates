@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3823713239068487400}
   - component: {fileID: 1111046892180867462}
   - component: {fileID: 1548539404382322065}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Special
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,13 +124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 853589787657885882}
-  maxenergy: 100
-  currentEnergy: 0
-  energyCost: 25
-  coolmax: 5
-  cooldown: 0
+  maxenergy: 1
+  currentEnergy: 1
+  timer: 0
+  cooldown: 2.5
   energyBar: {fileID: 0}
-  usedSpecial: 0
   currentCollisions: []
 --- !u!70 &1548539404382322065
 CapsuleCollider2D:

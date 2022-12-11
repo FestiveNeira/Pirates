@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2864068018186236096}
   - component: {fileID: 3700252243916940384}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Special
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,16 +185,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 5641606855137220733}
-  maxenergy: 100
-  currentEnergy: 0
-  energyCost: 5
-  coolmax: 2
-  cooldown: 0
+  maxenergy: 1
+  currentEnergy: 1
+  timer: 0
+  cooldown: 1
+  energyBar: {fileID: 0}
+  bullet: {fileID: 4419474809208217521, guid: 5a709492e12dc984bacbf5247018ccbb, type: 3}
   speed: 12
   liveTime: 5
-  energyBar: {fileID: 0}
-  usedSpecial: 0
-  bullet: {fileID: 4419474809208217521, guid: 5a709492e12dc984bacbf5247018ccbb, type: 3}
 --- !u!1 &2789093748859344555
 GameObject:
   m_ObjectHideFlags: 0

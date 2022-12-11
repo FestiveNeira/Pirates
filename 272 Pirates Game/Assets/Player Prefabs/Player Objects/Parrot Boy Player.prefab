@@ -347,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2271354980644057332}
   - component: {fileID: 5068832603233481745}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Special
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,17 +382,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 9218465803391703284}
+  maxenergy: 1
+  currentEnergy: 1
+  timer: 0
+  cooldown: 2.5
+  energyBar: {fileID: 0}
   parent: {fileID: 4808521861346321852}
-  maxenergy: 100
-  currentEnergy: 0
-  energyCost: 10
-  coolmax: 5
-  cooldown: 0
+  bird: {fileID: 4419474809208217521, guid: 33154d9597b2133488a8b384fe4e6322, type: 3}
   speed: 12
   dist: 6
-  energyBar: {fileID: 0}
-  usedSpecial: 0
-  bird: {fileID: 4419474809208217521, guid: 33154d9597b2133488a8b384fe4e6322, type: 3}
 --- !u!1 &4808521861346321852
 GameObject:
   m_ObjectHideFlags: 0

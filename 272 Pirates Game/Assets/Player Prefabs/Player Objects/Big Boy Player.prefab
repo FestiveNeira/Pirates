@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2684026369256881337}
   - component: {fileID: 1051483489667264074}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Special
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,16 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2515669087063691439}
-  parent: {fileID: 4808521861346321852}
-  maxenergy: 100
-  currentEnergy: 0
-  energyCost: 25
-  coolmax: 5
-  cooldown: 0
+  maxenergy: 1
+  currentEnergy: 1
+  timer: 0
+  cooldown: 2.5
   energyBar: {fileID: 0}
-  usedSpecial: 0
   cannonBall: {fileID: 4419474809208217521, guid: 0c85f1f919a26aa49801916da274bdb9, type: 3}
   strength: 3
+  parent: {fileID: 4808521861346321852}
 --- !u!1 &1964284221525922548
 GameObject:
   m_ObjectHideFlags: 0

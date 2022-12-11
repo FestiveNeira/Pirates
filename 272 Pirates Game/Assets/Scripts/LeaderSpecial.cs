@@ -31,10 +31,10 @@ public class LeaderSpecial : MonoBehaviour
         {
             if(currentEnergy >= 1)
             {
-            Debug.Log("click");
                 Recharge();
                 currentEnergy = 0;
                 energyBar.SetEnergy(currentEnergy);
+                Debug.Log("click " + currentEnergy);
             }
         }
     }
@@ -49,6 +49,9 @@ public class LeaderSpecial : MonoBehaviour
                 currentEnergy = timer;
             }
             energyBar.SetEnergy(currentEnergy);
+        }
+        else {
+            timer = 0;
         }
     }
 
