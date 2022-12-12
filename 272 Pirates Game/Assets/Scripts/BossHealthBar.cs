@@ -35,6 +35,11 @@ public class BossHealthBar : MonoBehaviour
     {
         GameObject healthBar = GameObject.FindGameObjectWithTag("BossHealth");
         Slider slider = healthBar.GetComponent<Slider>();
-        slider.value = eh.currentHealth;
+        Debug.Log(slider.value);
+        Debug.Log(eh.currentHealth);
+        if (slider.value != eh.currentHealth)
+        {
+            slider.value = eh.currentHealth;
+        }
     }
 }

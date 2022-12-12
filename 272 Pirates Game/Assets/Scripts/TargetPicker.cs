@@ -12,13 +12,13 @@ public class TargetPicker : MonoBehaviour
 
     void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("PlayTracker").Length != 0)
+        targets = GameObject.FindGameObjectsWithTag("PlayTracker");
+        if (targets.Length != 0)
         {
-            targets = GameObject.FindGameObjectsWithTag("PlayTracker");
             target = targets[0];
-
-            isTarget = true;
         }
+
+        isTarget = true;
     }
 
     void Update()
@@ -61,8 +61,15 @@ public class TargetPicker : MonoBehaviour
                 }
             }
         }
-        else {
-            Start();
+        else
+        {
+            targets = GameObject.FindGameObjectsWithTag("PlayTracker");
+            if (targets.Length != 0)
+            {
+                target = targets[0];
+            }
+
+            isTarget = true;
         }
     }
 }

@@ -50,9 +50,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  DefaultTarget: {fileID: 0}
   target: {fileID: 0}
-  randtarget: 1
+  randtarget: 0
+  isTarget: 1
 --- !u!114 &2328306589549028347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +67,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 4931768518235151064, guid: 0e581869e2bf2764ab97d837bde7c78e, type: 3}
   projectileSpeed: 10
-  startattacktimer: 0
   randomattackdelay: 0
   maxDelay: 1
-  attackDelay: 10

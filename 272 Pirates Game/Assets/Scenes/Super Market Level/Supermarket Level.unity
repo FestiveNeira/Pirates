@@ -22368,10 +22368,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5351807042964864233, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
-      propertyPath: m_TagString
-      value: BossHealth
-      objectReference: {fileID: 0}
     - target: {fileID: 7629127896203946994, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
       propertyPath: m_Name
       value: UI
@@ -22576,19 +22572,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5351807042964864233, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
   m_PrefabInstance: {fileID: 875324262}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &912898125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912898123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7209f1d6903214d4db1202e8de0472aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eh: {fileID: 0}
 --- !u!4 &929788361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3841834759179111185, guid: 13b8fb24c23ecb94ca8b3b27cb576b7c, type: 3}
