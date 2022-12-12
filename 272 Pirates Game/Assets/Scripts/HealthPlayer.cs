@@ -59,6 +59,17 @@ public class HealthPlayer : MonoBehaviour
         }
     }
 
+    public void DoDamageNoKnockback(int damage) {
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Destroy(parent);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy") && immunitytimer <= 0)
         {
