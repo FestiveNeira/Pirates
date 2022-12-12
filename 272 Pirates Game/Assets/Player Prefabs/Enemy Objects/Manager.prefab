@@ -280,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7450883778320022838}
   anim: {fileID: 5079330497641368194}
+  bhb: {fileID: 1403509405127788645}
   knockback: 20
   maxHealth: 5
   currentHealth: 0
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7209f1d6903214d4db1202e8de0472aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eh: {fileID: 7307268414756489636}
 --- !u!1 &7750192749473086512
 GameObject:
   m_ObjectHideFlags: 0

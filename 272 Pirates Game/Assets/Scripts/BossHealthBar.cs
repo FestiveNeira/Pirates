@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BossHealthBar : MonoBehaviour
 {
-    public void SetMaxHealth(int health)
+    /*public void SetMaxHealth(int health)
     {
         GameObject healthBar = GameObject.FindGameObjectWithTag("BossHealth");
         Slider slider = healthBar.GetComponent<Slider>();
@@ -18,5 +18,24 @@ public class BossHealthBar : MonoBehaviour
         GameObject healthBar = GameObject.FindGameObjectWithTag("BossHealth");
         Slider slider = healthBar.GetComponent<Slider>();
         slider.value = health;
+    }*/
+
+    public HealthEnemy eh;
+    //public GameObject healthBar;
+
+    private void Start()
+    {
+        GameObject healthBar = GameObject.FindGameObjectWithTag("BossHealth");
+        Slider slider = healthBar.GetComponent<Slider>();
+        slider.value = eh.currentHealth;
     }
+
+    public void UpdateHealth()
+    {
+        GameObject healthBar = GameObject.FindGameObjectWithTag("BossHealth");
+        Slider slider = healthBar.GetComponent<Slider>();
+        slider.value = eh.currentHealth;
+    }
+
+
 }

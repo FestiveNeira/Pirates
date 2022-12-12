@@ -309,6 +309,7 @@ MonoBehaviour:
   target: {fileID: 0}
   offset: {x: 0, y: 0, z: -10}
   damping: 0.5
+  follow: 1
 --- !u!1001 &64216045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,11 +396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5807826386583065407, guid: 74dc480fe3cf54b4fac922e8ff04d3ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 141.22
+      value: 124.1
       objectReference: {fileID: 0}
     - target: {fileID: 5807826386583065407, guid: 74dc480fe3cf54b4fac922e8ff04d3ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.71
+      value: -6.77
       objectReference: {fileID: 0}
     - target: {fileID: 5807826386583065407, guid: 74dc480fe3cf54b4fac922e8ff04d3ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22365,6 +22366,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5351807042964864233, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
+      propertyPath: m_TagString
+      value: BossHealth
+      objectReference: {fileID: 0}
     - target: {fileID: 7629127896203946994, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
       propertyPath: m_Name
       value: UI
@@ -22569,6 +22574,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5351807042964864233, guid: 84ef695f4cfc2144db535a6dc6d39983, type: 3}
   m_PrefabInstance: {fileID: 875324262}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &912898125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912898123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7209f1d6903214d4db1202e8de0472aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eh: {fileID: 0}
 --- !u!4 &929788361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3841834759179111185, guid: 13b8fb24c23ecb94ca8b3b27cb576b7c, type: 3}
@@ -23357,6 +23375,10 @@ PrefabInstance:
     - target: {fileID: 8331707398899606089, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.2957497
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425322909083995203, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9985423
       objectReference: {fileID: 0}
     - target: {fileID: 8425322909083995203, guid: f8f49f3e14e6d7f4192e833488cd4a3c, type: 3}
       propertyPath: m_LocalRotation.z
@@ -40670,6 +40692,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 5efdf02e-bec1-43e6-b9e2-8de3e84fe0aa
     m_ActionName: Player/Jump[/DualSenseGamepadHID/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba579c63-f912-47d7-8d59-03e22dffd509
+    m_ActionName: Player/Select
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Player controls
   m_DefaultActionMap: Player
