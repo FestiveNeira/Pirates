@@ -5,8 +5,8 @@ using UnityEngine;
 public class SmoothCameraFollow : MonoBehaviour
 {
     Camera cam;
-    float height;
-    float width;
+    public float height;
+    public float width;
 
     public Transform target;
     public Vector3 offset;
@@ -18,9 +18,9 @@ public class SmoothCameraFollow : MonoBehaviour
 
     private void Start()
     {
-        Camera cam = Camera.main;
-        float height = 2f * cam.orthographicSize;
-        float width = height * cam.aspect;
+        cam = Camera.main;
+        height = 2f * cam.orthographicSize;
+        width = height * cam.aspect;
     }
 
     private void FixedUpdate()
@@ -32,8 +32,8 @@ public class SmoothCameraFollow : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("ChaseTarget").transform;
         }
         Vector3 movePosition = target.position + offset;
-        if (movePosition.y - (height / 2) < -(8 - (height / 2))) {
-            movePosition.y = -(8 - (height / 2)) + (height / 2);
+        if (movePosition.y - (height / 2) < -8) {
+            movePosition.y = -(8 - (height / 2));
         }
         transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, damping);
     }
