@@ -8,6 +8,7 @@ public class ActivateScroller : MonoBehaviour
     public GameObject Outside;
     public GameObject Inside;
     public GameObject LoseZone;
+    public GameObject MovingCam;
 
     void Start() {
         cam = Camera.main;
@@ -20,6 +21,7 @@ public class ActivateScroller : MonoBehaviour
             Outside.SetActive(true);
             Inside.SetActive(false);
             LoseZone.SetActive(true);
+            MovingCam.SetActive(true);
             cam.gameObject.GetComponent<SmoothCameraFollow>().follow = false;
             Destroy(gameObject);
         }

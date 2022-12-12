@@ -15,7 +15,6 @@ public class scaleWithCam : MonoBehaviour
         float height = 2f * cam.orthographicSize;
         float width = height * cam.aspect;
 
-        this.gameObject.transform.localScale = new Vector3(1, height, 0);
         if (front) {
             this.gameObject.transform.localPosition = new Vector3(width / 2, 0, 0);
         }
