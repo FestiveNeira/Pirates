@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2168654862762118499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8080824239762142173}
+  - component: {fileID: 2720684824172553888}
+  m_Layer: 0
+  m_Name: Gunpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8080824239762142173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168654862762118499}
+  m_LocalRotation: {x: -0, y: -0, z: 0.000000029802322, w: 1}
+  m_LocalPosition: {x: 0.13752325, y: 0.26674196, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2809815370239745209}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2720684824172553888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168654862762118499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4855904904ce7834089ff2c7004eaa0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 6652355619377491346}
+  target: {fileID: 0}
+  animparent: {fileID: 2385139713797991453}
+  isPlayer: 0
+  speed: 12
+  liveTime: 5
+  coolmax: 2
 --- !u!1 &4061823433508970117
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +715,11 @@ GameObject:
 --- !u!95 &2809815369609743772 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3081384695080557946, guid: 86cba9b95edd5fa45a05b82c746d805b, type: 3}
+  m_PrefabInstance: {fileID: 881930632867844326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2809815370239745209 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3081384694886763615, guid: 86cba9b95edd5fa45a05b82c746d805b, type: 3}
   m_PrefabInstance: {fileID: 881930632867844326}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &3589841942391846014 stripped

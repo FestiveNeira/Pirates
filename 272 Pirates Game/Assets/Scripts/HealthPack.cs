@@ -13,14 +13,12 @@ public class HealthPack : MonoBehaviour
             if (collision.gameObject.CompareTag("PlayerHitbox"))
             {
                 healing = true;
-                Debug.Log("Heal");
                 collision.gameObject.GetComponent<HealthPlayer>().Heal(30);
                 Destroy(gameObject);
             }
             if (collision.gameObject.CompareTag("RangedHitbox"))
             {
                 healing = true;
-                Debug.Log("Heal");
                 collision.gameObject.transform.parent.gameObject.GetComponent<HealthPlayer>().Heal(30);
                 Destroy(gameObject);
             }

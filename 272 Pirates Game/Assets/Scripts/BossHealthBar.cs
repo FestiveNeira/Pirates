@@ -27,6 +27,7 @@ public class BossHealthBar : MonoBehaviour
     {
         GameObject healthBar = GameObject.FindGameObjectWithTag("BossHealth");
         Slider slider = healthBar.GetComponent<Slider>();
+        slider.maxValue = eh.maxHealth;
         slider.value = eh.currentHealth;
     }
 
