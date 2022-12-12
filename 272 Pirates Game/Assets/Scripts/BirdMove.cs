@@ -39,6 +39,7 @@ public class BirdMove : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("EnemyRangedHit")) {
+            Debug.Log(col.gameObject.transform.parent.gameObject.name);
             col.gameObject.transform.parent.gameObject.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 1);
         }
         else if (GameObject.ReferenceEquals(col.gameObject.transform.parent.parent.parent.gameObject, owner) && turn) {

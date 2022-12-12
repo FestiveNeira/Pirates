@@ -7,8 +7,6 @@ public class HealthEnemy : MonoBehaviour
     public GameObject parent;
     public Animator anim;
 
-    public BossHealthBar bhb;
-
     public int knockback = 20;
 
     public int maxHealth = 5;
@@ -23,8 +21,6 @@ public class HealthEnemy : MonoBehaviour
     public void TakeDamage(GameObject source, int amount)
     {
         currentHealth -= amount;
-
-        bhb.UpdateHealth();
 
         //play hurt animation prolly red flash
 

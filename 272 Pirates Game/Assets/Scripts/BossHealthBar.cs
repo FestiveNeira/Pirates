@@ -30,12 +30,10 @@ public class BossHealthBar : MonoBehaviour
         slider.value = eh.currentHealth;
     }
 
-    public void UpdateHealth()
+    void FixedUpdate()
     {
         GameObject healthBar = GameObject.FindGameObjectWithTag("BossHealth");
         Slider slider = healthBar.GetComponent<Slider>();
         slider.value = eh.currentHealth;
     }
-
-
 }
