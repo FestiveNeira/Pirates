@@ -7,6 +7,7 @@ public class BulletMove : MonoBehaviour
     public bool friendly;
     public int speed;
     public float timetolive;
+    public float timer = 0;
 
     Rigidbody2D rb;
 
@@ -22,7 +23,12 @@ public class BulletMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         rb.velocity = new Vector3(speed, 0, 0);
+        if (timer >= timetolive)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

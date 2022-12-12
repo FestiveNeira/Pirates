@@ -8,7 +8,7 @@ public class LoadScene : MonoBehaviour
     public string scene;
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.CompareTag("Player")) {
+        if (col.gameObject.CompareTag("PlayerHitbox")) {
             SceneManager.LoadScene(scene);
         }
     }
