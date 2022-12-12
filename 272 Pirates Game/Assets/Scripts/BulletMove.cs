@@ -38,5 +38,9 @@ public class BulletMove : MonoBehaviour
             }
             gameObject.SetActive(false);
         }
+        if (collision.gameObject.CompareTag("BulletObstacle"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
