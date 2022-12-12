@@ -20,6 +20,8 @@ public class ParrotSpecial : MonoBehaviour
     public int speed = 12;
     public float dist = 6f;
 
+    public GameObject birdobj;
+
     void Start()
     {
         energyBar = GameObject.FindGameObjectWithTag("EnergyBar").GetComponent<EnergyBar>();
@@ -29,6 +31,10 @@ public class ParrotSpecial : MonoBehaviour
 
     void Update()
     {
+        if (birdobj.activeSelf != hasBird)
+        {
+            birdobj.SetActive(hasBird);
+        }
         RechargeEnergy();
         anim.ResetTrigger("Special");
         if(Input.GetKeyDown(KeyCode.Mouse1))
