@@ -188,7 +188,7 @@ MonoBehaviour:
   maxenergy: 1
   currentEnergy: 1
   timer: 0
-  cooldown: 10
+  cooldown: 15
   energyBar: {fileID: 0}
   bullet: {fileID: 4419474809208217521, guid: 5a709492e12dc984bacbf5247018ccbb, type: 3}
   speed: 12

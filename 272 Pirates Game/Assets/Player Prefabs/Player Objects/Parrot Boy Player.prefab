@@ -384,7 +384,7 @@ MonoBehaviour:
   maxenergy: 1
   currentEnergy: 1
   timer: 0
-  cooldown: 2.5
+  cooldown: 7.5
   hasBird: 1
   energyBar: {fileID: 0}
   parent: {fileID: 4808521861346321852}

@@ -48,7 +48,7 @@ MonoBehaviour:
   maxenergy: 1
   currentEnergy: 1
   timer: 0
-  cooldown: 5
+  cooldown: 10
   energyBar: {fileID: 0}
   cannonBall: {fileID: 4419474809208217521, guid: 0c85f1f919a26aa49801916da274bdb9, type: 3}
   strength: 5

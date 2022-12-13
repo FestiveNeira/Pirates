@@ -127,7 +127,7 @@ MonoBehaviour:
   maxenergy: 1
   currentEnergy: 1
   timer: 0
-  cooldown: 5
+  cooldown: 10
   energyBar: {fileID: 0}
   currentCollisions: []
 --- !u!70 &1548539404382322065
