@@ -40,7 +40,7 @@ public class BulletMove : MonoBehaviour
         if (collision.gameObject.CompareTag("RangedHitbox") && !friendly)
         {
             if (collision.gameObject.GetComponent<HitCheck>().Check()) {
-                collision.gameObject.transform.parent.gameObject.GetComponent<HealthPlayer>().TakeDamage(this.gameObject, 5);
+                collision.gameObject.transform.parent.gameObject.GetComponent<HealthPlayer>().TakeDamage(this.gameObject, 2);
             }
             gameObject.SetActive(false);
         }
