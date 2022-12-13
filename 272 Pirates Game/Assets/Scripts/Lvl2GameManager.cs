@@ -10,6 +10,7 @@ public class Lvl2GameManager : MonoBehaviour
 
     public GameObject spawn1;
     public GameObject spawn2;
+    public GameObject spawn3;
 
     public GameObject p1HealthBar;
     public GameObject p2HealthBar;
@@ -26,7 +27,7 @@ public class Lvl2GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        totalEnemies = (spawn1.GetComponent<SpawnPoint>().enemyTotal + spawn2.GetComponent<SpawnPoint>().enemyTotal);
+        totalEnemies = (spawn1.GetComponent<SpawnPoint>().enemyTotal + spawn2.GetComponent<SpawnPoint>().enemyTotal + spawn3.GetComponent<SpawnPoint>().enemyTotal);
         enemyCount = totalEnemies;
 
         if (ps.p1)
@@ -56,9 +57,10 @@ public class Lvl2GameManager : MonoBehaviour
         {
             wall1.SetActive(false);
             spawn2.SetActive(true);
+            spawn3.SetActive(true);
         }
 
-        if (enemyCount == (totalEnemies - (spawn1.GetComponent<SpawnPoint>().enemyTotal + spawn2.GetComponent<SpawnPoint>().enemyTotal)))
+        if (enemyCount == (totalEnemies - (spawn1.GetComponent<SpawnPoint>().enemyTotal + spawn2.GetComponent<SpawnPoint>().enemyTotal + spawn3.GetComponent<SpawnPoint>().enemyTotal)))
         {
             wall2.SetActive(false);
         }
