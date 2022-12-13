@@ -21,6 +21,7 @@ public class Lvl2GameManager : MonoBehaviour
 
     public static int enemyCount;
     public static int playerCount;
+    public static bool lvl2Dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -62,9 +63,10 @@ public class Lvl2GameManager : MonoBehaviour
             wall2.SetActive(false);
         }
 
-        if (playerCount <= 0)
+        if (lvl2Dead == true)
         {
-            //SceneManager.LoadScene("DeathScene");
+            lvl2Dead = false;
+            SceneManager.LoadScene("DeathScene");
         }
     }
 }

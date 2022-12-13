@@ -55,7 +55,8 @@ public class HealthPlayer : MonoBehaviour
         
         if (currentHealth <= 0)
         {
-            Destroy(parent);
+            GameManager.dead = true;
+            Lvl2GameManager.lvl2Dead = true;
         }
     }
 
@@ -66,7 +67,8 @@ public class HealthPlayer : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(parent);
+            GameManager.dead = true;
+            Lvl2GameManager.lvl2Dead = true;
         }
     }
 
@@ -76,9 +78,5 @@ public class HealthPlayer : MonoBehaviour
             immunitytimer = IFrames;
             TakeDamage(collision.gameObject, 10);
         }
-    }
-
-    private void OnDestroy() {
-        GameManager.playerCount -= 1;
     }
 }

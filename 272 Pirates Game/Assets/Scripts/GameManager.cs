@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     public static int enemyCount;
     public static int playerCount;
+    public static bool dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -74,9 +75,10 @@ public class GameManager : MonoBehaviour
             bossHealthBar.SetActive(true);
         }
 
-        if(playerCount <= 0)
+        if(dead == true)
         {
-            //SceneManager.LoadScene("DeathScene");
+            dead = false;
+            SceneManager.LoadScene("DeathScene");
         }
     }
 }

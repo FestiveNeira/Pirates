@@ -160,7 +160,6 @@ GameObject:
   - component: {fileID: 4314985383208536893}
   - component: {fileID: 7621263395526976537}
   - component: {fileID: 4245419294375557153}
-  - component: {fileID: 1373354430}
   - component: {fileID: 1373354437}
   m_Layer: 3
   m_Name: Leader Player
@@ -270,18 +269,6 @@ MonoBehaviour:
   minX: -37
   maxY: -2.4
   minY: -7.5
---- !u!114 &1373354430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4808521861346321852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f8f41bbf25a11458b8318b535a3b83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1373354437
 MonoBehaviour:
   m_ObjectHideFlags: 0
