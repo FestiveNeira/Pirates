@@ -280,9 +280,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 7450883778320022838}
   anim: {fileID: 5079330497641368194}
-  bhb: {fileID: 1403509405127788645}
   knockback: 20
-  maxHealth: 5
+  maxHealth: 10
   currentHealth: 0
 --- !u!114 &6212730487265087345
 MonoBehaviour:
