@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 7621263395526976537}
   - component: {fileID: 4245419294375557153}
   - component: {fileID: 1373354437}
+  - component: {fileID: 3747085662493443703}
   m_Layer: 3
   m_Name: Leader Player
   m_TagString: PlayTracker
@@ -316,6 +317,19 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3747085662493443703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808521861346321852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d87dbb45f796d45821696e5db544ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 8034498813047103226}
 --- !u!1 &5221210098967489260
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2206019564e248948a24a396451f8342, type: 3}
+--- !u!1 &8034498813047103226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7337474591467413181, guid: 2206019564e248948a24a396451f8342, type: 3}
+  m_PrefabInstance: {fileID: 744136662072082503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9171685982854121113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8438597361526490846, guid: 2206019564e248948a24a396451f8342, type: 3}

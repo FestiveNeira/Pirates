@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 7621263395526976537}
   - component: {fileID: 9081894721415331534}
   - component: {fileID: -6502564723873902804}
+  - component: {fileID: 2601106776145754008}
   m_Layer: 3
   m_Name: Big Boy Player
   m_TagString: PlayTracker
@@ -490,6 +491,19 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2601106776145754008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808521861346321852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d87dbb45f796d45821696e5db544ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 8541696039610104401}
 --- !u!1 &5221210098967489260
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +757,11 @@ PrefabInstance:
 --- !u!4 &7368498798841651762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8438597361526490846, guid: 2206019564e248948a24a396451f8342, type: 3}
+  m_PrefabInstance: {fileID: 1394357804592833772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8541696039610104401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7337474591467413181, guid: 2206019564e248948a24a396451f8342, type: 3}
   m_PrefabInstance: {fileID: 1394357804592833772}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4386860968415872013

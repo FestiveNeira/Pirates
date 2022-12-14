@@ -12,20 +12,8 @@ public class ActivateScroller : MonoBehaviour
 
     public AudioClip chase;
 
-    public Object[] allObjects;
-    List<GameObject> boats = new List<GameObject>();
-
     void Start() {
-        allObjects = Resources.FindObjectsOfTypeAll(typeof(GameObject));
         cam = Camera.main;
-        
-        foreach (Object go in allObjects) {
-            GameObject cGO = go as GameObject;
-            if (cGO.CompareTag("Boat")) {
-                Debug.Log("Boat Found");
-                boats.Add(cGO);
-            }
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,9 +26,7 @@ public class ActivateScroller : MonoBehaviour
             LoseZone.SetActive(true);
             MovingCam.SetActive(true);
             cam.gameObject.GetComponent<SmoothCameraFollow>().follow = false;
-            foreach (GameObject boat in boats) {
-                 boat.SetActive(true);
-            }
+            collision.gameObject.GetComponent<Boat>().boat.SetActive(true);
             this.gameObject.SetActive(false);
         }
     }

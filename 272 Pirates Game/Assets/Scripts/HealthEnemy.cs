@@ -29,7 +29,6 @@ public class HealthEnemy : MonoBehaviour
             this.GetComponent<BasicMovement>().pause = true;
         }
         if (this.GetComponent<ManagerMovement>() != null) {
-            Debug.Log(source.name);
             this.GetComponent<ManagerMovement>().pause = true;
         }
         
