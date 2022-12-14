@@ -53,6 +53,23 @@ public class Lvl2GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ps.p1 && p1HealthBar.active == false)
+        {
+            p1HealthBar.SetActive(true);
+        }
+        if (ps.p2 && p1HealthBar.active == false)
+        {
+            p2HealthBar.SetActive(true);
+        }
+        if (ps.p3 && p1HealthBar.active == false)
+        {
+            p3HealthBar.SetActive(true);
+        }
+        if (ps.p4 && p1HealthBar.active == false)
+        {
+            p4HealthBar.SetActive(true);
+        }
+
         spawn1.SetActive(true);
 
         if (enemyCount == (totalEnemies - (spawn1.GetComponent<SpawnPoint>().enemyTotal)))
