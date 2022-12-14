@@ -26,7 +26,15 @@ public class ActivateScroller : MonoBehaviour
             LoseZone.SetActive(true);
             MovingCam.SetActive(true);
             cam.gameObject.GetComponent<SmoothCameraFollow>().follow = false;
-            Destroy(gameObject);
+            Transform[] children = collision.gameObject.GetComponentsInChildren<Transform>();
+            foreach (Transform child in children)
+            {
+                if(child.gameObject.name == "Boat")
+                {
+                    child.gameObject.SetActive(true);
+                }
+            }
+                Destroy(gameObject);
         }
     }
 }
