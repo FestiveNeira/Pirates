@@ -38,7 +38,6 @@ public class BulletPool : MonoBehaviour
         {
             if(!pooledObjects[i].activeSelf)
             {
-                Debug.Log("obj found");
                 return pooledObjects[i];
             }
         }

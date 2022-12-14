@@ -10,6 +10,7 @@ public class BirdMove : MonoBehaviour
     public GameObject owner;
     public int speed;
     public float dist;
+    public bool flip;
     Vector3 start;
     Vector3 ownerLoc;
 
@@ -20,7 +21,9 @@ public class BirdMove : MonoBehaviour
         start = this.gameObject.transform.position;
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector3(speed, 0, 0);
-        Flip();
+        if (flip) {
+            Flip();
+        }
     }
 
     void Update()
@@ -63,11 +66,10 @@ public class BirdMove : MonoBehaviour
     }
 
     public void Flip() {
-        Debug.Log("Flip");
-        if (this.gameObject.transform.rotation.y == 180) {
+        if (this.gameObject.transform.rotation.eulerAngles.y == 180) {
             this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (this.gameObject.transform.rotation.y == 0) {
+        else if (this.gameObject.transform.rotation.eulerAngles.y == 0) {
             this.gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }

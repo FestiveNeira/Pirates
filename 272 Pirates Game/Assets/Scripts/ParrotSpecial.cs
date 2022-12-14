@@ -19,6 +19,7 @@ public class ParrotSpecial : MonoBehaviour
     public GameObject bird;
     public int speed = 12;
     public float dist = 6f;
+    bool flip;
 
     public GameObject birdobj;
 
@@ -68,8 +69,14 @@ public class ParrotSpecial : MonoBehaviour
     public void Recharge()
     {
         anim.SetTrigger("Special");
-        if (anim.transform.rotation.y != 0) {speed = -Mathf.Abs(speed);}
-        else {speed = Mathf.Abs(speed);}
+        if (anim.transform.rotation.y != 0) {
+            speed = -Mathf.Abs(speed);
+            flip = false;
+            }
+        else {
+            speed = Mathf.Abs(speed);
+            flip = true;
+        }
 
         var temp = Instantiate(bird, this.transform.position, Quaternion.identity);
 
@@ -77,6 +84,6 @@ public class ParrotSpecial : MonoBehaviour
         temp.GetComponent<BirdMove>().owner = parent;
         temp.GetComponent<BirdMove>().speed = speed;
         temp.GetComponent<BirdMove>().dist = dist;
-        temp.SetActive(true);
+        temp.GetComponent<BirdMove>().flip = flip;
     }
 }
