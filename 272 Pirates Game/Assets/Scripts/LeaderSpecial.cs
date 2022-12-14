@@ -45,7 +45,7 @@ public class LeaderSpecial : MonoBehaviour
                 currentEnergy = 1;
             }
             else {
-                currentEnergy = timer;
+                currentEnergy = timer / cooldown;
             }
             energyBar.SetEnergy(currentEnergy);
         }
