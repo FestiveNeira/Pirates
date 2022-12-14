@@ -22,8 +22,6 @@ public class HealthEnemy : MonoBehaviour
     {
         currentHealth -= amount;
 
-        //play hurt animation prolly red flash
-
         //stop all movement and do knockback
         if (this.GetComponent<BasicMovement>() != null) {
             this.GetComponent<BasicMovement>().pause = true;

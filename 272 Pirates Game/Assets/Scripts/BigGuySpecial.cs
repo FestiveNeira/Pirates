@@ -16,6 +16,7 @@ public class BigGuySpecial : MonoBehaviour
 
     public GameObject cannonBall;
     public int strength = 3;
+    public int damage = 10;
     public GameObject parent;
 
     void Start()
@@ -69,6 +70,7 @@ public class BigGuySpecial : MonoBehaviour
         temp.GetComponent<BigGuyCannonBall>().target = initvelocity.normalized;
         temp.GetComponent<BigGuyCannonBall>().explodeY = parent.transform.position.y;
         temp.GetComponent<BigGuyCannonBall>().strength = strength;
+        temp.GetComponent<BigGuyCannonBall>().dmg = damage;
         temp.GetComponent<BigGuyCannonBall>().parent = parent;
         temp.GetComponent<BigGuyCannonBall>().flip = flipped;
     }

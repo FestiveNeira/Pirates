@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class BigGuyCannonBall : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BigGuyCannonBall : MonoBehaviour
     public Vector3 target;
     public float explodeY;
     public int strength;
+    public int dmg;
     
     void Start()
     {
@@ -27,9 +29,9 @@ public class BigGuyCannonBall : MonoBehaviour
     void Update()
     {
         if (this.gameObject.transform.position.y < explodeY) {
-            foreach(GameObject e in currentCollisions) {
+            foreach(GameObject e in currentCollisions.ToList()) {
                 if (e.gameObject.CompareTag("Enemy")) {
-                    e.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 10);
+                    e.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, dmg);
                 }
             }
             Destroy(gameObject);
@@ -41,9 +43,9 @@ public class BigGuyCannonBall : MonoBehaviour
         // Add the GameObject collided with to the list.
         currentCollisions.Add(col.gameObject);
         if (col.gameObject.CompareTag("BulletObstacle")) {
-            foreach(GameObject e in currentCollisions) {
+            foreach(GameObject e in currentCollisions.ToList()) {
                 if (e.gameObject.CompareTag("Enemy")) {
-                    e.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 10);
+                    e.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, dmg);
                 }
             }
             Destroy(gameObject);

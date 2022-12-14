@@ -12,6 +12,7 @@ public class TargetPicker : MonoBehaviour
 
     void Start()
     {
+        target = this.gameObject;
         targets = GameObject.FindGameObjectsWithTag("PlayTracker");
         if (targets.Length != 0)
         {
