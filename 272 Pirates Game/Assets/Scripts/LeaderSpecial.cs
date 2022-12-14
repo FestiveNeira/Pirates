@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class LeaderSpecial : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class LeaderSpecial : MonoBehaviour
 
     public float timer = 0f;
     public float cooldown = 2.5f;
+    public int damage = 5;
 
     public EnergyBar energyBar;
 
@@ -59,11 +61,11 @@ public class LeaderSpecial : MonoBehaviour
         anim.SetTrigger("Special");
 
         //damage enemies
-        for (int i = 0; i < currentCollisions.Count; i++)
+        foreach (GameObject e in currentCollisions.ToList())
         {
-            if (currentCollisions[i].gameObject.CompareTag("Enemy"))
+            if (e.gameObject.CompareTag("Enemy"))
             {
-                currentCollisions[i].GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 5);
+                e.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, damage);
             }
         }
     }
