@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4508162961397371585}
   - component: {fileID: 8179763446024139547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Front Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4527948871628479407}
   - component: {fileID: 5619931098241231987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back Wheel_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 26775569388597567}
   - component: {fileID: 7045155504876046935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6515623847432241911}
   - component: {fileID: 3309340815507892410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4234533080488410746}
   - component: {fileID: 8993231802189994280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Front Wheel_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2394145933749994121}
   - component: {fileID: 512469893192083631}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

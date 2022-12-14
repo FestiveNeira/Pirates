@@ -26,7 +26,7 @@ public class BirdMove : MonoBehaviour
     void Update()
     {
         delCheck();
-        if (getDist(this.gameObject.transform.position, start) > dist) {
+        if (getDist(this.gameObject.transform.position, start) > dist && !turn) {
             turn = true;
             Flip();
         }
@@ -45,7 +45,7 @@ public class BirdMove : MonoBehaviour
             origin.hasBird = true;
             Destroy(gameObject);
         }
-        else if (col.gameObject.CompareTag("DestroyBulletObstacle")) {
+        else if (col.gameObject.CompareTag("BulletObstacle")) {
             turn = true;
             Flip();
         }
@@ -63,6 +63,7 @@ public class BirdMove : MonoBehaviour
     }
 
     public void Flip() {
+        Debug.Log("Flip");
         if (this.gameObject.transform.rotation.y == 180) {
             this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }

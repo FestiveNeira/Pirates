@@ -40,7 +40,7 @@ public class BigGuyCannonBall : MonoBehaviour
     {
         // Add the GameObject collided with to the list.
         currentCollisions.Add(col.gameObject);
-        else if (col.gameObject.CompareTag("DestroyBulletObstacle")) {
+        if (col.gameObject.CompareTag("BulletObstacle")) {
             foreach(GameObject e in currentCollisions) {
                 if (e.gameObject.CompareTag("Enemy")) {
                     e.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 10);
