@@ -18,6 +18,7 @@ public class TypeWriterNewCutscene : MonoBehaviour
 
     private void Start()
     {
+        musicStop = false;
         Run(cutsceneText1, textLabel);
     }
 

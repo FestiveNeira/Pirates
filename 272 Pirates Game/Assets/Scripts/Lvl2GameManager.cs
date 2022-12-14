@@ -68,6 +68,7 @@ public class Lvl2GameManager : MonoBehaviour
         if (lvl2Dead == true)
         {
             lvl2Dead = false;
+            LVL1Music.isPlaying = false;
             SceneManager.LoadScene("DeathScene");
         }
     }

@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
         if(dead == true)
         {
             dead = false;
+            LVL1Music.isPlaying = false;
             SceneManager.LoadScene("DeathScene");
         }
     }
