@@ -18,6 +18,7 @@ public class ActivateScroller : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayTracker"))
         {
+            LVL1Music.isPlaying = false;
             Outside.SetActive(true);
             Inside.SetActive(false);
             LoseZone.SetActive(true);
