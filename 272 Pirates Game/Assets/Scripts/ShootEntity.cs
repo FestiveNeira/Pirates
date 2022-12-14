@@ -37,7 +37,6 @@ public class ShootEntity : MonoBehaviour
             var temp = Instantiate(projectile, this.transform.position, q);
             temp.GetComponent<ClerkBombScript>().destx = this.GetComponent<TargetPicker>().target.transform.position.x;
             temp.GetComponent<ClerkBombScript>().dir = direction;
-            temp.GetComponent<ClerkBombScript>().targets = this.GetComponent<TargetPicker>().targets;
             
             randomattackdelay = Random.Range(0f, maxDelay);
             dodelayticks = false;

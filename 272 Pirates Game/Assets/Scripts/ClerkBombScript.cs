@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ClerkBombScript : MonoBehaviour
 {
+    List<GameObject> currentCollisions = new List<GameObject>();
+
     Rigidbody2D rb;
     public GameObject clerk;
     public Animator animator;
     public float destx;
     public Vector3 dir;
-    public GameObject[] targets;
     
     // Start is called before the first frame update
     void Start()
@@ -22,21 +23,27 @@ public class ClerkBombScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Explode and make a clerk at low hp
         if (this.transform.position.x <= destx) {
-            // Explode and make a clerk at low hp
-            foreach (GameObject t in targets) {
-                if (t.activeSelf && t != null) {
-                    Vector2 v = this.transform.position - t.transform.position;
-                    double dist = Mathf.Sqrt(Mathf.Pow(v.x, 2) + Mathf.Pow(v.y, 2));
-                    if (dist < 1) {
-                        // Damage t for (maxdmg - (maxdmg * dist))
-                        t.transform.GetChild(0).gameObject.GetComponent<HealthPlayer>().TakeDamage(this.gameObject, 5);
-                    }
+            foreach(GameObject e in currentCollisions) {
+                if (e.gameObject.CompareTag("PlayerHitbox")) {
+                    e.GetComponent<HealthPlayer>().TakeDamage(this.gameObject, 10);
                 }
             }
             var temp = Instantiate(clerk, this.transform.position, Quaternion.Euler(Vector3.forward * 0));
-            // alter temp.HP
             Destroy(gameObject);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        // Add the GameObject collided with to the list.
+        currentCollisions.Add(col.gameObject);
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        // Remove the GameObject collided with from the list.
+        currentCollisions.Remove(col.gameObject);
     }
 }
