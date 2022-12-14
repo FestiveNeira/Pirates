@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MenuMusic : MonoBehaviour
 {
-    private void Awake()
+    public static bool isPlaying = false;
+    private void Start()
     {
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
         if(musicObj.Length > 1)
         {
             Destroy(gameObject);
         }
+        isPlaying = true;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -18,6 +20,7 @@ public class MenuMusic : MonoBehaviour
     {
         if(TypeWriterNewCutscene.musicStop == true)
         {
+            isPlaying = false;
             Destroy(gameObject);
         }
     }

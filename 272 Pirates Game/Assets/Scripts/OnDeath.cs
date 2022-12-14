@@ -7,6 +7,6 @@ public class OnDeath : MonoBehaviour
 {
     private void OnDestroy()
     {
-        SceneManager.LoadScene("Cutscene1");
+        GameManager.managerAlive = false;
     }
 }

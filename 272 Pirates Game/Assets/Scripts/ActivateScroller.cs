@@ -10,6 +10,8 @@ public class ActivateScroller : MonoBehaviour
     public GameObject LoseZone;
     public GameObject MovingCam;
 
+    public AudioClip chase;
+
     void Start() {
         cam = Camera.main;
     }
@@ -18,7 +20,7 @@ public class ActivateScroller : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayTracker"))
         {
-            LVL1Music.isPlaying = false;
+            AudioSolver.instance.SwapTrack(chase);
             Outside.SetActive(true);
             Inside.SetActive(false);
             LoseZone.SetActive(true);

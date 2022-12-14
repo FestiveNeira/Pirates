@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Lvl2GameManager : MonoBehaviour
 {
+    public AudioClip death;
+
     public GameObject wall1;
     public GameObject wall2;
 
@@ -68,7 +70,7 @@ public class Lvl2GameManager : MonoBehaviour
         if (lvl2Dead == true)
         {
             lvl2Dead = false;
-            LVL1Music.isPlaying = false;
+            AudioSolver.instance.SwapTrack(death);
             SceneManager.LoadScene("DeathScene");
         }
     }

@@ -6,7 +6,7 @@ public class LVL1Music : MonoBehaviour
 {
     public static bool isPlaying = true; 
 
-    private void Awake()
+    private void Start()
     {
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
         if (musicObj.Length > 1)

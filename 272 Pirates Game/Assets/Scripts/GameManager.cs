@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioClip death;
+
     public GameObject wall1;
     public GameObject wall2;
     public GameObject wall3;
@@ -27,9 +29,12 @@ public class GameManager : MonoBehaviour
     public static int playerCount;
     public static bool dead = false;
 
+    public static bool managerAlive = true;
+
     // Start is called before the first frame update
     void Start()
     {
+        managerAlive = true;
         totalEnemies = (spawn1.GetComponent<SpawnPoint>().enemyTotal + spawn2.GetComponent<SpawnPoint>().enemyTotal + spawn3.GetComponent<SpawnPoint>().enemyTotal + spawn4.GetComponent<SpawnPoint>().enemyTotal);
         enemyCount = totalEnemies;
 
@@ -78,8 +83,13 @@ public class GameManager : MonoBehaviour
         if(dead == true)
         {
             dead = false;
-            LVL1Music.isPlaying = false;
+            AudioSolver.instance.SwapTrack(death);
             SceneManager.LoadScene("DeathScene");
+        }
+
+        if(managerAlive == false)
+        {
+            SceneManager.LoadScene("Cutscene1");
         }
     }
 }

@@ -256,6 +256,7 @@ MonoBehaviour:
   Inside: {fileID: 1717099529}
   LoseZone: {fileID: 1094961141}
   MovingCam: {fileID: 530059935}
+  chase: {fileID: 8300000, guid: 06cbde7bc212a354e9b34eba19f89a77, type: 3}
 --- !u!1 &28738981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2533,6 +2534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: Victory
+  victory: {fileID: 8300000, guid: f55176f7aca6ff247b410227b5c6a8f0, type: 3}
 --- !u!61 &404387120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26896,6 +26898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: DeathScene
+  victory: {fileID: 0}
 --- !u!61 &1094961144
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38251,7 +38254,6 @@ GameObject:
   - component: {fileID: 1340924269}
   - component: {fileID: 1340924268}
   - component: {fileID: 1340924271}
-  - component: {fileID: 1340924272}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -38344,102 +38346,6 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: -10}
   damping: 0.5
   follow: 1
---- !u!82 &1340924272
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340924267}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e8dc8f6acae632742a27da68867fd78d, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &1348538278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 01f139a4efbdb4a48a54a1f43bb20a01, type: 3}
@@ -40368,6 +40274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c995a4757612c6b4db0405d8981a897f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death: {fileID: 8300000, guid: ba623640fc791da408a033b43ee7d25a, type: 3}
   wall1: {fileID: 137055670}
   wall2: {fileID: 1032158222}
   spawn1: {fileID: 1008343317}
@@ -42188,6 +42095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: Victory
+  victory: {fileID: 0}
 --- !u!61 &1820305077
 BoxCollider2D:
   m_ObjectHideFlags: 0

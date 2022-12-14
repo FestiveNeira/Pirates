@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public AudioClip menu;
     public void ExitButton()
     {
         Application.Quit();
@@ -12,6 +14,7 @@ public class MainMenu : MonoBehaviour
     
     public void StartGame()
     {
+        AudioSolver.instance.SwapTrack(menu);
         SceneManager.LoadScene("Menu");
     }
 

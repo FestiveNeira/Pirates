@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class TypeWriterNewCutscene : MonoBehaviour
 {
+    public AudioClip lvl1;
+
     public TMP_Text textLabel;
 
     public static bool musicStop = false;
@@ -75,6 +77,8 @@ public class TypeWriterNewCutscene : MonoBehaviour
         textLabel.text = textToType;
 
         yield return new WaitForSeconds(3f);
+
+        AudioSolver.instance.SwapTrack(lvl1);
 
         SceneManager.LoadScene("Supermarket Level");
         musicStop = true;

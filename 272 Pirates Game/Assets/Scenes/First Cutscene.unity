@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa154de72cbd71a41a2eb1bcf7f474a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lvl1: {fileID: 8300000, guid: 07ec6238bd39495449e8e5a68c71d078, type: 3}
   textLabel: {fileID: 2076768690}
   typeWriterSpeed: 25
 --- !u!114 &242146592
@@ -167,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c676a38924ca90b4a8ff1f4a996aa064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!4 &242146593
 Transform:
   m_ObjectHideFlags: 0

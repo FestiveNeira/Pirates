@@ -15,17 +15,23 @@ public class HealthPack : MonoBehaviour
             if (collision.gameObject.CompareTag("PlayerHitbox"))
             {
                 healing = true;
-                collision.gameObject.GetComponent<HealthPlayer>().Heal(30);
-                Destroy(gameObject);
                 gameObject.GetComponent<AudioSource>().Play();
+                collision.gameObject.GetComponent<HealthPlayer>().Heal(30);
+                StartCoroutine(Sound());
             }
             if (collision.gameObject.CompareTag("RangedHitbox"))
             {
                 healing = true;
-                collision.gameObject.transform.parent.gameObject.GetComponent<HealthPlayer>().Heal(30);
-                Destroy(gameObject);
                 gameObject.GetComponent<AudioSource>().Play();
+                collision.gameObject.transform.parent.gameObject.GetComponent<HealthPlayer>().Heal(30);
+                StartCoroutine(Sound());
             }
         }
+    }
+
+    private IEnumerator Sound()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }
