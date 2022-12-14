@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 199072794599973017}
   - component: {fileID: 8668453254724528823}
   - component: {fileID: 1229200096505780927}
+  - component: {fileID: 2867364858928293871}
   m_Layer: 3
   m_Name: Parrot Boy Player
   m_TagString: PlayTracker
@@ -576,6 +577,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 6159912843598838517}
+--- !u!210 &2867364858928293871
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808521861346321852}
+  m_Enabled: 1
+  m_SortingLayerID: -520236629
+  m_SortingLayer: 2
+  m_SortingOrder: 10
 --- !u!1 &5221210098967489260
 GameObject:
   m_ObjectHideFlags: 0

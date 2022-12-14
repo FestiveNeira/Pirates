@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 8267724068731906269}
   - component: {fileID: 3641628473090640906}
   - component: {fileID: 5338510831568887901}
+  - component: {fileID: 1450750787965408821}
   m_Layer: 6
   m_Name: Security
   m_TagString: Enemy
@@ -282,6 +283,17 @@ MonoBehaviour:
   minX: -37
   maxY: -2.4
   minY: -7.5
+--- !u!210 &1450750787965408821
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988862702287046879}
+  m_Enabled: 1
+  m_SortingLayerID: -520236629
+  m_SortingLayer: 2
+  m_SortingOrder: 10
 --- !u!1 &7617471222356032456
 GameObject:
   m_ObjectHideFlags: 0

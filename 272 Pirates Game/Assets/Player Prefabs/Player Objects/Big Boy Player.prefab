@@ -52,6 +52,7 @@ MonoBehaviour:
   energyBar: {fileID: 0}
   cannonBall: {fileID: 4419474809208217521, guid: 0c85f1f919a26aa49801916da274bdb9, type: 3}
   strength: 5
+  damage: 10
   parent: {fileID: 4808521861346321852}
 --- !u!1 &1964284221525922548
 GameObject:
@@ -336,6 +337,7 @@ GameObject:
   - component: {fileID: 9081894721415331534}
   - component: {fileID: -6502564723873902804}
   - component: {fileID: 2601106776145754008}
+  - component: {fileID: 2124589745891561214}
   m_Layer: 3
   m_Name: Big Boy Player
   m_TagString: PlayTracker
@@ -504,6 +506,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 8541696039610104401}
+--- !u!210 &2124589745891561214
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808521861346321852}
+  m_Enabled: 1
+  m_SortingLayerID: -520236629
+  m_SortingLayer: 2
+  m_SortingOrder: 10
 --- !u!1 &5221210098967489260
 GameObject:
   m_ObjectHideFlags: 0

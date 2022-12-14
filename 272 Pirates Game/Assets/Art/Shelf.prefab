@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3841834759179111185}
   - component: {fileID: 5437874021617553618}
+  - component: {fileID: 1010618594533005458}
   m_Layer: 8
   m_Name: Shelf
   m_TagString: BulletObstacle
@@ -59,6 +60,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1500001, y: 2.1709461}
   m_EdgeRadius: 0
+--- !u!210 &1010618594533005458
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2709171976757695346}
+  m_Enabled: 1
+  m_SortingLayerID: -520236629
+  m_SortingLayer: 2
+  m_SortingOrder: 10
 --- !u!1 &6562057833513636222
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,9 +141,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 86744923
-  m_SortingLayer: 1
-  m_SortingOrder: 10
+  m_SortingLayerID: -520236629
+  m_SortingLayer: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: -3779858415329552794, guid: 3398cb6fb325a444980d86c1e13e4ee0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

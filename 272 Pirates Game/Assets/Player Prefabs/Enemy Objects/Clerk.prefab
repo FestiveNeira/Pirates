@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 256264781970183252}
   - component: {fileID: 7047975713675928997}
   - component: {fileID: 2996691164059818387}
+  - component: {fileID: -2443428591121736383}
   m_Layer: 6
   m_Name: Clerk
   m_TagString: Enemy
@@ -166,6 +167,17 @@ MonoBehaviour:
   minX: -37
   maxY: -2.4
   minY: -7.5
+--- !u!210 &-2443428591121736383
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556115463521746436}
+  m_Enabled: 1
+  m_SortingLayerID: -520236629
+  m_SortingLayer: 2
+  m_SortingOrder: 10
 --- !u!1 &3005905066386551124
 GameObject:
   m_ObjectHideFlags: 0

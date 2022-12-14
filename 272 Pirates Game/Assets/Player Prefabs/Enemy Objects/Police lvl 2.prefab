@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4362879122123316654}
   - component: {fileID: 4905429270577934841}
   - component: {fileID: 6135112787375353594}
+  - component: {fileID: 3647839449899541844}
   m_Layer: 6
   m_Name: Police lvl 2
   m_TagString: Enemy
@@ -166,6 +167,17 @@ MonoBehaviour:
   stoppingDistance: 0.1
   minimumDistance: 0.05
   dist: 0
+--- !u!210 &3647839449899541844
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269235058984294779}
+  m_Enabled: 1
+  m_SortingLayerID: -520236629
+  m_SortingLayer: 2
+  m_SortingOrder: 10
 --- !u!1 &680808940951033387
 GameObject:
   m_ObjectHideFlags: 0

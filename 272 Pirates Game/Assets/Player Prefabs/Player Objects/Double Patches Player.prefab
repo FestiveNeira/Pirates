@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 9091193571063357154}
   - component: {fileID: 8772829427581591622}
   - component: {fileID: 7098349544928354713}
+  - component: {fileID: 4439014835588345981}
   m_Layer: 3
   m_Name: Double Patches Player
   m_TagString: PlayTracker
@@ -573,6 +574,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 5192076443540503288}
+--- !u!210 &4439014835588345981
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808521861346321852}
+  m_Enabled: 1
+  m_SortingLayerID: -520236629
+  m_SortingLayer: 2
+  m_SortingOrder: 10
 --- !u!1 &5221210098967489260
 GameObject:
   m_ObjectHideFlags: 0
