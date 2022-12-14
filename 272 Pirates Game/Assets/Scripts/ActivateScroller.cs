@@ -20,21 +20,14 @@ public class ActivateScroller : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayTracker"))
         {
-            //AudioSolver.instance.SwapTrack(chase);
+            AudioSolver.instance.SwapTrack(chase);
             Outside.SetActive(true);
             Inside.SetActive(false);
             LoseZone.SetActive(true);
             MovingCam.SetActive(true);
             cam.gameObject.GetComponent<SmoothCameraFollow>().follow = false;
-            Transform[] children = collision.gameObject.GetComponentsInChildren<Transform>();
-            foreach (Transform child in children)
-            {
-                if(child.gameObject.name == "Boat")
-                {
-                    child.gameObject.SetActive(true);
-                }
-            }
-                Destroy(gameObject);
+            //set the boat object of the player to true
+            Destroy(gameObject);
         }
     }
 }
