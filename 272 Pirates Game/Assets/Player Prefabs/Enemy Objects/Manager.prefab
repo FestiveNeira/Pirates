@@ -282,7 +282,7 @@ MonoBehaviour:
   parent: {fileID: 7450883778320022838}
   anim: {fileID: 5079330497641368194}
   knockback: 20
-  maxHealth: 10
+  maxHealth: 7
   currentHealth: 0
 --- !u!114 &6212730487265087345
 MonoBehaviour:
