@@ -40,6 +40,14 @@ public class BigGuyCannonBall : MonoBehaviour
     {
         // Add the GameObject collided with to the list.
         currentCollisions.Add(col.gameObject);
+        else if (col.gameObject.CompareTag("DestroyBulletObstacle")) {
+            foreach(GameObject e in currentCollisions) {
+                if (e.gameObject.CompareTag("Enemy")) {
+                    e.GetComponent<HealthEnemy>().TakeDamage(this.gameObject, 10);
+                }
+            }
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)

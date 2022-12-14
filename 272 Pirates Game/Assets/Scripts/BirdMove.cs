@@ -45,6 +45,10 @@ public class BirdMove : MonoBehaviour
             origin.hasBird = true;
             Destroy(gameObject);
         }
+        else if (col.gameObject.CompareTag("DestroyBulletObstacle")) {
+            turn = true;
+            Flip();
+        }
     }
 
     public void delCheck() {
