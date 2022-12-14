@@ -122,7 +122,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: -520236629
   m_SortingLayer: 2
-  m_SortingOrder: 10
+  m_SortingOrder: 11
 --- !u!1001 &3500993329407034762
 PrefabInstance:
   m_ObjectHideFlags: 0

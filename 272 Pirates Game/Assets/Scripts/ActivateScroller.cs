@@ -16,11 +16,11 @@ public class ActivateScroller : MonoBehaviour
         cam = Camera.main;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("PlayTracker"))
         {
-            AudioSolver.instance.SwapTrack(chase);
+            //AudioSolver.instance.SwapTrack(chase);
             Outside.SetActive(true);
             Inside.SetActive(false);
             LoseZone.SetActive(true);
