@@ -21,6 +21,7 @@ TagManager:
   - EnergyBar
   - ChaseTarget
   - BulletObstacle
+  - GameMusic
   layers:
   - Default
   - TransparentFX

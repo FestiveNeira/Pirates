@@ -8,6 +8,8 @@ public class TypeWriterNewCutscene : MonoBehaviour
 {
     public TMP_Text textLabel;
 
+    public static bool musicStop = false;
+
     private string cutsceneText1 = "I have an Idea!\n";
     private string cutsceneText2 = "It's Pirate Time!";
 
@@ -74,5 +76,6 @@ public class TypeWriterNewCutscene : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene("Supermarket Level");
+        musicStop = true;
     }
 }
