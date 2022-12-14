@@ -257,6 +257,7 @@ MonoBehaviour:
   LoseZone: {fileID: 1094961141}
   MovingCam: {fileID: 530059935}
   chase: {fileID: 8300000, guid: 06cbde7bc212a354e9b34eba19f89a77, type: 3}
+  allObjects: []
 --- !u!1 &28738981
 GameObject:
   m_ObjectHideFlags: 0
@@ -4174,6 +4175,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147013350525149464, guid: d8903ab636a16fb47a951970547b7592, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147013350525149465, guid: d8903ab636a16fb47a951970547b7592, type: 3}
+      propertyPath: p1
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1147013350525149466, guid: d8903ab636a16fb47a951970547b7592, type: 3}

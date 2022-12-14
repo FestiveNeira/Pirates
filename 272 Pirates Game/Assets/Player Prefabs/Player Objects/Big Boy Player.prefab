@@ -690,6 +690,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7337474591467413181, guid: 2206019564e248948a24a396451f8342, type: 3}
+      propertyPath: m_TagString
+      value: Boat
+      objectReference: {fileID: 0}
     - target: {fileID: 8438597361526490846, guid: 2206019564e248948a24a396451f8342, type: 3}
       propertyPath: m_RootOrder
       value: 2

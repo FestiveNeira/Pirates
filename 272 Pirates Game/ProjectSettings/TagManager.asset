@@ -22,6 +22,7 @@ TagManager:
   - ChaseTarget
   - BulletObstacle
   - GameMusic
+  - Boat
   layers:
   - Default
   - TransparentFX
