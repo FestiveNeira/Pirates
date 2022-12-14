@@ -20,7 +20,7 @@ public class ActivateScroller : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayTracker"))
         {
-            AudioSolver.instance.SwapTrack(chase);
+            //AudioSolver.instance.SwapTrack(chase);
             Outside.SetActive(true);
             Inside.SetActive(false);
             LoseZone.SetActive(true);
