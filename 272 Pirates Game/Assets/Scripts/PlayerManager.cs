@@ -6,7 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
     public Character[] characters;
-    public Character currerntCharatcer;
+    public Character currentCharacter;
 
     public void Awake()
     {
@@ -24,14 +24,14 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        if(characters.Length > 0 && currerntCharatcer == null)
+        if(characters.Length > 0 && currentCharacter == null)
         {
-            currerntCharatcer = characters[0];
+            currentCharacter = characters[0];
         }
     }
 
     public void SetCharacter(Character character)
     {
-        currerntCharatcer = character;
+        currentCharacter = character;
     }
 }
