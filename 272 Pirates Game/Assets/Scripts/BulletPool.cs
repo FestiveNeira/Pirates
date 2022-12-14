@@ -36,8 +36,9 @@ public class BulletPool : MonoBehaviour
     {
         for (int i = 0; i < amountToPool; i++)
         {
-            if(!pooledObjects[i].activeInHierarchy)
-            {            
+            if(!pooledObjects[i].activeSelf)
+            {
+                Debug.Log("obj found");
                 return pooledObjects[i];
             }
         }

@@ -51,6 +51,7 @@ public class FireGun : MonoBehaviour
                 bullet.GetComponent<BulletMove>().friendly = isPlayer;
                 bullet.GetComponent<BulletMove>().speed = speed;
                 bullet.GetComponent<BulletMove>().timetolive = liveTime;
+                bullet.GetComponent<BulletMove>().timer = 0;
                 bullet.SetActive(true);
             }
             cooldown = coolmax;

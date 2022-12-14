@@ -70,6 +70,7 @@ public class DoublePatchesSpecial : MonoBehaviour
             bullet.GetComponent<BulletMove>().friendly = true;
             bullet.GetComponent<BulletMove>().speed = speed;
             bullet.GetComponent<BulletMove>().timetolive = liveTime;
+            bullet.GetComponent<BulletMove>().timer = 0;
             bullet.SetActive(true);
         }
         else {
